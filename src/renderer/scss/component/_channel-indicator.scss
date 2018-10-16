@@ -1,0 +1,10 @@
+.channel-name {
+  display: inline-flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.channel-indicator__icon--invalid {
+  color: var(--color-error);
+}

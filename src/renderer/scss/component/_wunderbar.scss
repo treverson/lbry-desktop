@@ -1,0 +1,102 @@
+.wunderbar {
+  cursor: text;
+  display: flex;
+  flex: 1;
+  // min-width: 175px;
+  padding-right: 1rem;
+  position: relative;
+  z-index: 1;
+
+  /*
+  > .icon {
+    top: 10px;
+    left: 10px;
+
+    position: absolute;
+    z-index: 1;
+  }
+  */
+}
+
+.wunderbar__input {
+  width: 100%;
+  height: var(--header-height);
+
+  align-items: center;
+  background-color: var(--search-bg-color);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg opacity='0.3' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E %3Cg transform='translate(-136.000000, -115.000000)' stroke='%23000' stroke-width='2'%3E %3Cg transform='translate(136.000000, 115.000000)'%3E %3Ccircle cx='10' cy='10' r='7'/%3E %3Cpath d='M15, 15 L21, 21' stroke-linecap='round' stroke-linejoin='round'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3C/svg%3E");
+  background-position: 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  border-bottom: 1px solid var(--color-divider);
+  border-left: 1px solid var(--color-divider);
+  border-right: 1px solid var(--color-divider);
+  // border-bottom: none;
+  // border-radius: var(--btn-radius);
+  // box-shadow: var(--box-shadow-wunderbar);
+  color: var(--search-color);
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  // font-family: 'metropolis-medium';
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 0.5rem;
+
+  &::placeholder {
+  }
+
+  &:focus {
+    background-color: var(--search-active-bg-color);
+    // border-bottom: 1px solid var(--color-divider);
+    // border-radius: 0;
+    // box-shadow: var(--box-shadow-button);
+  }
+}
+
+.wunderbar__menu {
+  background-color: transparent !important;
+  border-radius: 0 0 3px 3px !important;
+  max-width: 100px;
+  overflow-x: hidden;
+  padding: 0 !important;
+}
+
+.wunderbar__suggestion {
+  align-items: center;
+  background-color: var(--search-bg-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  // font-family: 'metropolis-medium';
+  justify-items: flex-start;
+  padding: 5px 10px;
+
+  &:not(:first-of-type) {
+    border-top: 1px solid var(--search-item-border-color);
+  }
+
+  .icon {
+    flex-shrink: 0;
+  }
+}
+
+.wunderbar__suggestion-label {
+  overflow: hidden;
+  padding-left: $spacing-vertical;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wunderbar__suggestion-label--action {
+  // font-family: 'metropolis-medium';
+  font-size: 12px;
+  line-height: 0.1; // to vertically align because the font size is smaller // TODO: Fix this
+  margin-left: $spacing-vertical * 1/3;
+  white-space: nowrap;
+}
+
+.wunderbar__active-suggestion {
+  background-color: var(--color-secondary);
+  color: var(--search-item-active-color);
+}

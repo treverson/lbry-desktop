@@ -1,0 +1,215 @@
+/*
+button:disabled {
+  cursor: default;
+}
+
+.btn {
+  min-width: var(--btn-height);
+  height: var(--btn-height);
+
+  align-items: center;
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  display: flex;
+  fill: currentColor; // for proper icon color
+  // font-family: 'metropolis-medium';
+  font-size: 12px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  text-decoration: none;
+  transition: all var(--animation-duration) var(--animation-style);
+
+  &:not(:disabled) {
+  }
+
+  &:hover {
+    background-color: var(--btn-bg-primary-hover);
+  }
+
+  &:not(.btn--no-padding):not(.btn--link):not(.btn--no-style) {
+    .btn__content {
+      align-items: center;
+      display: flex;
+      padding: 0 8px;
+    }
+  }
+
+  &:not(.btn--alt) {
+    background-color: var(--btn-bg-primary);
+    color: var(--btn-color-primary);
+  }
+
+  &.btn--alt {
+    &:not(:disabled) {
+      background-color: var(--btn-bg-alt);
+      color: var(--btn-color-alt);
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: var(--color-help);
+    }
+  }
+
+  &.btn--arrow {
+    color: var(--text-color);
+    width: var(--btn-arrow-width);
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &.btn--danger {
+    background-color: var(--btn-bg-danger);
+  }
+
+  &.btn--disabled:disabled {
+    cursor: default; // TODO: Investigate if redundant
+
+    &.btn--primary {
+      background-color: rgba(var(--color-black), 0.5);
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &.btn--external-link {
+    color: var(--btn-external-color);
+  }
+
+  &.btn--file-actions {
+    width: var(--btn-height);
+    height: var(--btn-height);
+
+    background-color: var(--color-black);
+    border-radius: var(--btn-radius);
+    color: var(--color-white);
+    opacity: 0.8;
+    padding: 10px;
+  }
+
+  &.btn--header-balance {
+    color: var(--header-primary-color);
+    // font-family: 'metropolis-medium';
+    font-size: 14px;
+
+    @media only screen and (min-width: $large-breakpoint) {
+      font-size: 18px;
+    }
+
+    .btn__label--balance {
+      color: var(--text-help-color);
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      .btn__label--balance {
+        color: var(--header-primary-color);
+      }
+    }
+  }
+
+  &.btn--header-publish {
+    background-color: var(--header-primary-color);
+  }
+
+  &.btn--home-nav {
+    background-color: var(--btn-home-bg-color);
+
+    .btn__content {
+      padding: 0;
+    }
+  }
+
+  &.btn--inverse {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--btn-color-inverse);
+  }
+
+  &.btn--link {
+    margin: 0;
+    padding: 0;
+
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--btn-color-inverse);
+    display: inline;
+    font-size: 1em;
+    min-width: 0;
+    text-align: left;
+  }
+
+  &.btn--no-style {
+    margin: 0;
+    padding: 0;
+
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    min-width: 0;
+  }
+
+  &.btn--secondary {
+    background-color: var(--btn-bg-secondary);
+  }
+
+  &.btn--tourniquet {
+    max-width: 20vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.btn--uppercase {
+    text-transform: uppercase;
+  }
+
+  .icon + .btn__label {
+    padding-left: 5px;
+  }
+}
+
+.btn--link,
+.btn--no-style {
+  height: auto;
+
+  .btn__label,
+  .btn__content {
+    padding: 0;
+  }
+}
+
+.btn__label + .icon,
+.icon + .btn__label {
+  // TODO: ...what?
+  margin-left: 5px;
+}
+*/
+
+/*
+  Everything below this is variations of the default button classes
+  You must pass in a className, props will not set these classes,
+  if you use these in several different places they should probably
+  be applied via props
+*/
+
+/*
+.btn--uri-indicator {
+  transition: color var(--animation-duration) var(--animation-style);
+
+  &:hover {
+    color: var(--btn-color-inverse);
+  }
+}
+*/

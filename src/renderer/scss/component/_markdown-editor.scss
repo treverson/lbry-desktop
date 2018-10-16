@@ -1,0 +1,91 @@
+.CodeMirror {
+  background-color: var(--card-bg);
+  border: 0;
+  border-radius: 0;
+  color: var(--text-color);
+
+  .CodeMirror-cursor {
+    border-color: var(--color-primary);
+  }
+
+  .CodeMirror-placeholder {
+    opacity: 0.5;
+  }
+
+  .CodeMirror-selected {
+    background-color: transparent;
+  }
+
+  .CodeMirror-selectedtext {
+    background-color: var(--editor-text-selection-bg) !important;
+    color: var(--text-selection-color) !important;
+  }
+
+  .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
+    background: none;
+    text-decoration: underline;
+    text-decoration-color: #f00;
+    text-decoration-style: dotted;
+  }
+}
+
+.editor-preview {
+  background-color: var(--color-bg);
+  border: 0;
+  font-size: calc(var(--font-size-subtext-multiple) * 1em);
+}
+
+.editor-statusbar {
+  color: var(--form-label-color);
+}
+
+.editor-toolbar {
+  background-color: var(--color-bg-alt);
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--box-shadow-layer);
+  opacity: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  i.separator {
+    border: 0;
+  }
+
+  &.fullscreen {
+    background-color: var(--color-bg-alt);
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  a {
+    color: var(--text-color) !important;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+
+    &.active,
+    &:hover {
+      background-color: var(--button-bg);
+      border-color: transparent;
+      opacity: 1;
+    }
+  }
+
+  &.disabled-for-preview a:not(.no-disable) {
+    background-color: var(--color-bg-alt);
+    border-color: transparent;
+    opacity: 0.3;
+  }
+}
+
+// Fix selection
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background-color: var(--text-selection-bg);
+}

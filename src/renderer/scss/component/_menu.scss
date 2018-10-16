@@ -1,0 +1,24 @@
+$border-radius-menu: 2px;
+
+.menu-container {
+  display: inline-block;
+}
+
+.menu {
+  background-color: var(--menu-bg);
+  box-shadow: var(--box-shadow-layer);
+  border-radius: var(--menu-radius);
+  padding-top: ($spacing-vertical / 5) 0px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.menu__menu-item {
+  display: block;
+  padding: ($spacing-vertical / 4) ($spacing-vertical / 2);
+
+  &:hover {
+    background-color: var(--menu-item-hover-bg);
+  }
+}

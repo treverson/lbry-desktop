@@ -1,0 +1,51 @@
+.snack-bar {
+  top: $spacing-vertical;
+  right: 0;
+
+  background-color: var(--snackbar-bg-primary);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-layer);
+  color: var(--snackbar-color-primary);
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--snack-bar-width);
+  min-width: 300px;
+  opacity: 0.95;
+  padding: 14px 20px 10px 20px;
+  position: fixed;
+  transition: all var(--transition-duration) var(--transition-type);
+  width: 100%;
+  z-index: 10000; // hack to get it over react modal // TODO: Fix this
+}
+
+.snack-bar__action {
+  display: inline-block;
+  margin-bottom: 4px;
+  min-width: min-content;
+  text-transform: uppercase;
+
+  span:hover {
+    text-decoration: underline;
+  }
+}
+
+.snack-bar__message {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  div {
+    &:nth-of-type(1) {
+      font-size: 30px;
+      margin-right: 20px;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+  }
+}

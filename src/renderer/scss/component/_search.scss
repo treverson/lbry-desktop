@@ -1,0 +1,22 @@
+.search__top {
+  background-color: var(--search-exact-result);
+  padding: 0 $spacing-width $spacing-width;
+}
+
+.search__content {
+  padding: $spacing-width;
+}
+
+.search__results {
+  margin-top: -$spacing-width;
+  padding-bottom: $spacing-vertical;
+  flex-flow: wrap column;
+
+  .search-result__row {
+    padding: $spacing-vertical 0;
+
+    &:first-of-type {
+      padding-top: 0; // TODO: Investigate, seems like an override is happening here
+    }
+  }
+}

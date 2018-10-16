@@ -1,0 +1,127 @@
+.markdown-preview {
+  margin: 0;
+
+  // Headers
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    // font-family: 'metropolis-semibold';
+    margin: 16px 0;
+  }
+
+  h1 {
+    font-size: 1.22em;
+  }
+
+  h2 {
+    font-size: 1.14em;
+  }
+
+  h3 {
+    font-size: 1.06em;
+  }
+
+  h4 {
+    font-size: 0.92em;
+  }
+
+  h5 {
+    font-size: 0.84em;
+  }
+
+  h6 {
+    color: var(--color-help);
+    font-size: 0.84em;
+  }
+
+  // Paragraphs
+  p {
+    margin: $spacing-vertical * 2/3 0;
+    white-space: pre-line;
+  }
+
+  // Strikethrough text
+  del {
+    color: var(--color-help);
+  }
+
+  // Tables
+  table {
+    margin: 16px 0;
+    padding: 8px;
+    background-color: var(--card-bg);
+
+    tr td,
+    tr th,
+    tr td:first-of-type,
+    tr th:first-of-type,
+    tr td:last-of-type,
+    tr th:last-of-type {
+      padding: 8px;
+    }
+  }
+
+  // Image
+  img {
+    margin: 16px 0;
+  }
+
+  // Horizontal Rule
+  hr {
+    border: 1px solid var(--color-divider);
+  }
+
+  // Code
+  code {
+    margin: 16px 0;
+    padding: 8px;
+
+    background-color: var(--color-bg-alt);
+    color: var(--color-help);
+    display: block;
+    font-family: Consolas, 'Lucida Console', 'Source Sans', monospace;
+    font-size: 1em;
+  }
+
+  a {
+    color: var(--btn-external-color);
+    display: inline-block;
+    font-size: 1em;
+  }
+
+  // Lists
+  ol,
+  ul {
+    margin-bottom: 2em;
+  }
+
+  ul {
+    list-style: initial;
+  }
+
+  li {
+    margin-left: 2em;
+
+    p {
+      display: inline-block;
+    }
+  }
+
+  ol > li,
+  ul > li {
+    list-style-position: outside;
+  }
+}
+
+blockquote {
+  // TODO: Shouldn't this be with the above styles? Why is it outside?
+  margin: 16px 0;
+  padding: 8px;
+
+  background-color: var(--color-bg-alt);
+  border-left: 2px solid var(--color-help);
+  color: var(--color-help);
+}
