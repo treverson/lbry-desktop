@@ -3,14 +3,10 @@
   height: var(--btn-height);
 
   align-items: center;
-  background-color: $lbry-teal-5;
   border: none;
   border-radius: var(--btn-radius);
-  color: $lbry-white;
-  cursor: pointer;
   display: flex;
   fill: currentColor; // for proper icon color
-  font-size: 12px;
   justify-content: center;
   padding: 10px;
   position: relative;
@@ -24,7 +20,7 @@
     background-color: $lbry-teal-4;
   }
 
-  &:not(.btn--no-padding):not(.btn--link):not(.btn--no-style) {
+  &:not(.no-padding):not(.link):not(.no-style) {
     .btn__content {
       align-items: center;
       display: flex;
@@ -32,7 +28,16 @@
     }
   }
 
-  &.btn--alt {
+  &:not(.header-balance):not(.header-publish) {
+    // font-size: 1rem;
+  }
+
+  &:not(.inverse) {
+    background-color: $lbry-teal-5;
+    color: $lbry-white;
+  }
+
+  &.alt {
     &:not(:disabled) {
       background-color: $lbry-white;
       color: $lbry-black;
@@ -44,7 +49,7 @@
     }
   }
 
-  &.btn--arrow {
+  &.arrow {
     color: $lbry-black;
     width: var(--btn-arrow-width);
 
@@ -53,15 +58,15 @@
     }
   }
 
-  &.btn--danger {
+  &.danger {
     background-color: $lbry-red-3;
   }
 
-  &.btn--disabled:disabled {
+  &.disabled:disabled {
     // wtf?
     cursor: default;
 
-    &.btn--primary {
+    &.primary {
       background-color: rgba($lbry-black, 0.5);
     }
 
@@ -70,11 +75,11 @@
     }
   }
 
-  &.btn--external-link {
+  &.external-link {
     color: $lbry-blue-1;
   }
 
-  &.btn--file-actions {
+  &.file-actions {
     width: var(--btn-height);
     height: var(--btn-height);
 
@@ -85,12 +90,14 @@
     padding: 10px;
   }
 
-  &.btn--header-balance {
-    color: $lbry-teal-5;
-    font-size: 14px;
+  &.header-balance,
+  &.header-publish {
+    // font-size: 0.8rem;
+  }
 
+  &.header-balance {
     @media only screen and (min-width: $large-breakpoint) {
-      font-size: 18px;
+      // font-size: 18px;
     }
 
     .btn__label--balance {
@@ -106,64 +113,60 @@
     }
   }
 
-  &.btn--header-publish {
-    background-color: $lbry-teal-5;
+  &.header-publish {
+    // background-color: $lbry-teal-5;
   }
 
-  &.btn--home-nav {
+  &.home-nav {
     background-color: $lbry-white;
-    box-shadow: none;
 
     .btn__content {
-      padding: 0;
+      // padding: 0;
     }
   }
 
-  &.btn--inverse {
+  &.inverse {
     background-color: transparent;
-    box-shadow: none;
     color: $lbry-teal-5;
   }
 
-  &.btn--link {
-    margin: 0;
-    padding: 0;
+  &.link {
+    // margin: 0;
+    // padding: 0;
 
     background-color: inherit;
-    border-radius: 0;
-    box-shadow: none;
+    // border-radius: 0;
     color: $lbry-teal-5;
     display: inline;
-    font-size: 1em;
+    // font-size: 1rem;
     min-width: 0;
     text-align: left;
   }
 
-  &.btn--no-style {
+  &.no-style {
     margin: 0;
     padding: 0;
 
     background-color: inherit;
     border-radius: 0;
-    box-shadow: none;
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
     min-width: 0;
   }
 
-  &.btn--secondary {
+  &.secondary {
     background-color: $lbry-teal-5;
   }
 
-  &.btn--tourniquet {
+  &.tourniquet {
     max-width: 20vw;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  &.btn--uppercase {
+  &.uppercase {
     text-transform: uppercase;
   }
 
@@ -172,13 +175,13 @@
   }
 }
 
-.btn--link,
-.btn--no-style {
+.link,
+.no-style {
   height: auto;
 
   .btn__label,
   .btn__content {
-    padding: 0;
+    // padding: 0;
   }
 }
 
@@ -187,7 +190,7 @@
   margin-left: 5px;
 }
 
-.btn--uri-indicator {
+.uri-indicator {
   display: inline-block;
   transition: color var(--animation-duration) var(--animation-style);
 

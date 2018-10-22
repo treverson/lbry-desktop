@@ -41,20 +41,20 @@ const Header = (props: Props) => {
           noPadding
           button="alt"
           icon={icons.HOME}
-          className="btn--home-nav"
+          className="home-nav"
           description={__('Home')}
           onClick={() => navigate('/discover')}
         />
         <div className="header__history">
           <Button
-            className="btn--arrow"
+            className="arrow"
             icon={icons.ARROW_LEFT}
             description={__('Navigate back')}
             onClick={back}
             disabled={isBackDisabled}
           />
           <Button
-            className="btn--arrow"
+            className="arrow"
             icon={icons.ARROW_RIGHT}
             description={__('Navigate forward')}
             onClick={forward}
@@ -66,7 +66,7 @@ const Header = (props: Props) => {
       <div className="header__actions-right">
         <Button
           button="inverse"
-          className="btn--header-balance"
+          className="header-balance"
           onClick={() => navigate('/wallet')}
           label={
             isUpgradeAvailable ? (
@@ -87,7 +87,7 @@ const Header = (props: Props) => {
         <Button
           uppercase
           button="primary"
-          className="btn--header-publish"
+          className="header-publish"
           onClick={() => navigate('/publish')}
           icon={icons.UPLOAD}
           label={isUpgradeAvailable ? '' : __('Publish')}

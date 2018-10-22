@@ -1,11 +1,40 @@
 @charset "utf-8";
 
-@import '~@lbry/color/lbry-color', 'reset', 'type', 'vars', 'gui', 'component/syntax-highlighter',
-  'component/table', 'component/button', 'component/card', 'component/file-download',
-  'component/form-field', 'component/header', 'component/menu', 'component/tooltip',
-  'component/load-screen', 'component/channel-indicator', 'component/notice', 'component/modal',
-  'component/snack-bar', 'component/content', 'component/pagination', 'component/markdown-preview',
-  'component/markdown-editor', 'component/scrollbar', 'component/spinner', 'component/nav',
-  'component/file-list', 'component/file-render', 'component/search', 'component/toggle',
-  'component/search', 'component/dat-gui', 'component/item-list', 'component/time', 'component/icon',
-  'component/placeholder', 'themes/dark';
+@import '~@lbry/color/lbry-color';
+@import 'init/vars';
+@import 'init/mixins';
+@import 'init/reset';
+@import 'init/type';
+@import 'init/gui';
+@import 'component/syntax-highlighter';
+@import 'component/table';
+@import 'component/button';
+@import 'component/card';
+@import 'component/file-download';
+@import 'component/form-field';
+@import 'component/header';
+@import 'component/menu';
+@import 'component/tooltip';
+@import 'component/load-screen';
+@import 'component/channel-indicator';
+@import 'component/notice';
+@import 'component/modal';
+@import 'component/snack-bar';
+@import 'component/content';
+@import 'component/pagination';
+@import 'component/markdown-preview';
+@import 'component/markdown-editor';
+@import 'component/scrollbar';
+@import 'component/spinner';
+@import 'component/nav';
+@import 'component/file-list';
+@import 'component/file-render';
+@import 'component/search';
+@import 'component/toggle';
+@import 'component/search';
+@import 'component/dat-gui';
+@import 'component/item-list';
+@import 'component/time';
+@import 'component/icon';
+@import 'component/placeholder';
+@import 'themes/dark';

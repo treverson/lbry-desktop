@@ -1,8 +1,26 @@
 .nav {
-  background-color: rgba($lbry-gray-1, 0.7);
+  background-color: $lbry-white; // rgba($lbry-gray-1, 0.7);
+  border-right: 1px solid rgba($lbry-gray-1, 0.9);
   color: $lbry-gray-5;
   min-width: var(--side-nav-width);
-  padding: $spacing-width * 1/3;
+  padding-top: $spacing-width * 1/3;
+  position: relative;
+
+  &::before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(mix($lbry-blue-3, $lbry-gray-4, 15%), 0.2) 100%
+    );
+    content: '';
+    position: absolute;
+    z-index: 0;
+  }
 
   hr {
     border: 1px solid $lbry-gray-2;

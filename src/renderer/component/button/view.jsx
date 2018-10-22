@@ -58,22 +58,22 @@ class Button extends React.PureComponent<Props> {
     const combinedClassName = classnames(
       'btn',
       {
-        'btn--no-padding': noPadding,
+        'no-padding': noPadding,
       },
       button
         ? {
-            'btn--primary': button === 'primary',
-            'btn--secondary': button === 'secondary',
-            'btn--alt': button === 'alt',
-            'btn--danger': button === 'danger',
-            'btn--inverse': button === 'inverse',
-            'btn--disabled': disabled,
-            'btn--link': button === 'link',
-            'btn--external-link': button === 'link' && href,
-            'btn--uppercase': uppercase,
-            'btn--tourniquet': tourniquet,
+            primary: button === 'primary',
+            secondary: button === 'secondary',
+            alt: button === 'alt',
+            danger: button === 'danger',
+            inverse: button === 'inverse',
+            disabled,
+            link: button === 'link',
+            'external-link': button === 'link' && href,
+            uppercase,
+            tourniquet,
           }
-        : 'btn--no-style',
+        : 'no-style',
       className
     );
 
