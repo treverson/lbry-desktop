@@ -1,4 +1,12 @@
 .btn {
+  background-color: transparent;
+  color: inherit;
+  fill: currentColor; // for proper icon color
+  position: relative;
+}
+
+/*
+.btn {
   min-width: var(--btn-height);
   height: var(--btn-height);
 
@@ -198,3 +206,4 @@
     color: $lbry-teal-4;
   }
 }
+*/

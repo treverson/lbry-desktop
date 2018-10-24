@@ -6,8 +6,8 @@
 }
 
 @mixin font-mono {
-  font-family: 'SF Mono', Monaco, Inconsolata, 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro',
-    Consolas, 'Lucida Console', 'Courier New', Courier, monospace;
+  font-family: Inconsolata, 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', Consolas,
+    'Lucida Console', 'Courier New', Courier, monospace;
 }
 
 @mixin font-sans {

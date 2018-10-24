@@ -214,9 +214,9 @@ class CategoryList extends React.PureComponent<Props, State> {
     const showScrollButtons = isCommunityTopBids ? !obscureNsfw : true;
 
     return (
-      <div className="card-row">
-        <div className="card-row__header">
-          <div className="card-row__title">
+      <section className="cards row">
+        <header className="cards__header">
+          <div className="cards__header__title">
             {categoryLink ? (
               <Button label={category} navigate="/show" navigateParams={{ uri: categoryLink }} />
             ) : (
@@ -232,32 +232,32 @@ class CategoryList extends React.PureComponent<Props, State> {
             )}
           </div>
           {showScrollButtons && (
-            <div className="card-row__scroll-btns">
+            <nav className="cards__header__navigation">
               <Button
-                className="btn--arrow"
+                className="left"
                 disabled={!canScrollPrevious}
                 onClick={this.handleScrollPrevious}
                 icon={icons.ARROW_LEFT}
               />
               <Button
-                className="btn--arrow"
+                className="right"
                 disabled={!canScrollNext}
                 onClick={this.handleScrollNext}
                 icon={icons.ARROW_RIGHT}
               />
-            </div>
+            </nav>
           )}
-        </div>
+        </header>
         {obscureNsfw && isCommunityTopBids ? (
-          <div className="card-row__message help">
+          <p className="cards__message help">
             {__(
               'The community top bids section is only visible if you allow mature content in the app. You can change your content viewing preferences'
             )}{' '}
             <Button button="link" navigate="/settings" label={__('here')} />.
-          </div>
+          </p>
         ) : (
-          <div
-            className="card-row__scrollhouse"
+          <ul
+            className="cards__scrollhouse"
             ref={ref => {
               this.rowItems = ref;
             }}
@@ -269,9 +269,9 @@ class CategoryList extends React.PureComponent<Props, State> {
               channelClaims.map(claim => (
                 <FileCard key={claim.claim_id} uri={`lbry://${claim.name}#${claim.claim_id}`} />
               ))}
-          </div>
+          </ul>
         )}
-      </div>
+      </section>
     );
   }
 }
