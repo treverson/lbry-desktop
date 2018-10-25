@@ -8,6 +8,7 @@
 
   &.row {
     padding-top: $spacing-vertical;
+    // position: relative;
     white-space: nowrap;
     width: 100%;
 
@@ -15,8 +16,13 @@
       margin-bottom: 1rem;
       padding-bottom: $spacing-vertical;
 
-      background-color: $lbry-black;
+      // background-color: $lbry-gray-1;
+      background-image: linear-gradient(to bottom right, $lbry-black, $lbry-cyan-5 80%);
       color: $lbry-white;
+
+      .card:not(:first-of-type) {
+        // background-color: $lbry-grape-1;
+      }
 
       .card-row__header {
         font-weight: 700;
@@ -59,8 +65,8 @@
     display: block;
   }
 
-  .left,
-  .right {
+  .previous,
+  .next {
     // color: var(--text-color);
     // width: var(--btn-arrow-width);
 

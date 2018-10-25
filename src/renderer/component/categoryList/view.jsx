@@ -234,13 +234,13 @@ class CategoryList extends React.PureComponent<Props, State> {
           {showScrollButtons && (
             <nav className="cards__header__navigation">
               <Button
-                className="left"
+                className="previous"
                 disabled={!canScrollPrevious}
                 onClick={this.handleScrollPrevious}
                 icon={icons.ARROW_LEFT}
               />
               <Button
-                className="right"
+                className="next"
                 disabled={!canScrollNext}
                 onClick={this.handleScrollNext}
                 icon={icons.ARROW_RIGHT}
