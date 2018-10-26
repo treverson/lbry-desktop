@@ -1,6 +1,7 @@
 .channel-name {
-  display: inline-flex;
+  display: block; // inline-flex;
   overflow: hidden;
+  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

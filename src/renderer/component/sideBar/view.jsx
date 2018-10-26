@@ -24,7 +24,6 @@ type Props = {
 
 const SideBar = (props: Props) => {
   const { navLinks, notifications } = props;
-
   const badges = Object.keys(notifications).length;
 
   return (

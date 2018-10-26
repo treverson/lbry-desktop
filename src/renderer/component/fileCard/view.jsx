@@ -61,11 +61,11 @@ class FileCard extends React.PureComponent<Props> {
 
     if (!claim && !pending) {
       return (
-        <div className="card card--small">
-          <div className="card--placeholder card__media" />
-          <div className="card--placeholder placeholder__title" />
-          <div className="card--placeholder placeholder__channel" />
-          <div className="card--placeholder placeholder__date" />
+        <div className="card small">
+          <div className="card__placeholder media" />
+          <div className="card__placeholder title" />
+          <div className="card__placeholder channel" />
+          <div className="card__placeholder date" />
         </div>
       );
     }
@@ -93,28 +93,27 @@ class FileCard extends React.PureComponent<Props> {
         tabIndex="0"
         role="button"
         onClick={!pending ? () => navigate('/show', { uri }) : () => {}}
-        className={classnames('card card--small', {
-          'card--link': !pending,
-          'card--pending': pending,
+        className={classnames('card small', {
+          'link': !pending,
+          'pending': pending,
         })}
         onContextMenu={handleContextMenu}
       >
         <CardMedia thumbnail={thumbnail} />
-        <div className="card__title card__title--file-card">
+        <div className="card__title">
           <TruncatedText text={title} lines={2} />
         </div>
         <div className="card__subtitle">
           {pending ? <div>Pending...</div> : <UriIndicator uri={uri} link />}
         </div>
-        <div className="card__subtitle card--space-between">
+        <div className="card__date">
           <DateTime timeAgo block={height} />
-
-          <div className="card__file-properties">
-            <FilePrice hideFree uri={uri} />
-            {isRewardContent && <Icon iconColor="red" icon={icons.FEATURED} />}
-            {isSubscribed && <Icon icon={icons.HEART} />}
-            {fileInfo && <Icon icon={icons.LOCAL} />}
-          </div>
+        </div>
+        <div className="card__properties">
+          <FilePrice hideFree uri={uri} />
+          {isRewardContent && <Icon iconColor="red" icon={icons.FEATURED} />}
+          {isSubscribed && <Icon icon={icons.HEART} />}
+          {fileInfo && <Icon icon={icons.LOCAL} />}
         </div>
       </section>
     );

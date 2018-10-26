@@ -76,7 +76,16 @@ const Header = (props: Props) => {
 
       <WunderBar />
 
+      {
+        // TODO: Make `Menu` add `.active` class to `.navigation` when clicked
+      }
+
       <div className="header__navigation">
+        <Button
+          className="header__navigation__item menu"
+          description={__('Menu')}
+        />
+
         <Button
           className="header__navigation__item publish"
           description={__('Publish content')}

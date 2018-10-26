@@ -4,7 +4,14 @@
   font-size: 1.25rem;
   padding-top: 2rem;
   position: relative;
-  width: 250px;
+
+  @media (min-width: 601px) {
+    width: 171px; // 1px is for the border
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 
   &::before {
     top: 0;
@@ -12,6 +19,7 @@
     bottom: 0;
     right: 0;
 
+    // make this gradient "to bottom" on mobile view
     background-image: linear-gradient(
       to right,
       transparent,
@@ -32,8 +40,10 @@
   line-height: 1.75;
   padding-left: 2rem;
   position: relative;
+  text-align: left;
   transition: color 0.2s;
   white-space: nowrap;
+  width: 100%;
 
   &::before {
     top: 0;
@@ -41,12 +51,12 @@
 
     background-color: $lbry-teal-3;
     content: '';
-    height: 100%; // max-height: 1.5rem;
+    height: 100%;
     position: absolute;
     transition: width 0.2s;
   }
 
-  &:not(.active) {
+  &:not(.active):not(.title) {
     color: $lbry-gray-5;
 
     &::before {
@@ -65,12 +75,17 @@
     }
   }
 
+  &.active {
+    // background-color: rgba($lbry-gray-1, 0.3);
+  }
+
   &.title {
     margin-bottom: 0.25rem;
     padding-top: 2rem;
 
     color: $lbry-gray-5;
     cursor: default;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -78,7 +93,9 @@
 }
 
 .navigation__link__items {
-  padding-left: 2rem;
+  font-size: 1.15rem;
+  // margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
 }
 
 .navigation__link__item {
@@ -87,7 +104,7 @@
   &::before {
     width: 0.25rem;
     height: 0.25rem;
-    top: 42.5%;
+    top: 44%;
     left: -1rem;
 
     border-radius: 50%;

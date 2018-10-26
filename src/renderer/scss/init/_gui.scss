@@ -6,6 +6,7 @@ html {
   background-color: $lbry-white;
   font-size: 12px;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -54,6 +55,10 @@ p:not(:first-of-type) {
   margin-top: $spacing-vertical * 1/3;
 }
 
+
+
+// Page content
+
 .page {
   top: var(--header-height);
   left: 0;
@@ -74,7 +79,6 @@ p:not(:first-of-type) {
   }
 }
 
-// Page content
 .content {
   flex: 1;
   overflow: auto;
@@ -82,31 +86,30 @@ p:not(:first-of-type) {
 
 .main {
   margin: auto;
-  padding: $spacing-width $spacing-width;
   overflow: hidden;
-}
 
-.main--contained {
-  margin: auto;
-  max-width: 1000px;
-}
+  &:not(.extra-padding):not(.for-content):not(.no-padding) {
+    padding: $spacing-width;
+  }
 
-.main--no-padding {
-  padding-top: 0;
-  padding-right: 0;
-  padding-left: 0;
-  margin: 0;
-}
+  &.contained {
+    max-width: 1000px;
+  }
 
-.main--extra-padding {
-  padding-right: 100px;
-  padding-left: 100px;
-}
+  &.extra-padding {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
 
-.main--for-content {
-  display: flex;
-  padding: $spacing-width * 2/3;
-  justify-content: center;
+  &.for-content {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-width * 2/3;
+  }
+
+  &.no-padding {
+    // padding-bottom: $spacing-width;
+  }
 }
 
 .page__header {

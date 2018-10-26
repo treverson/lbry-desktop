@@ -53,7 +53,7 @@ class FileTile extends React.PureComponent<Props> {
     const isRewardContent = claim && rewardedContentClaimIds.includes(claim.claim_id);
 
     return (
-      <div className={classnames('card__file-properties', { card__subtitle: size === 'large' })}>
+      <div className={classnames('card__properties', { card__subtitle: size === 'large' })}>
         <FilePrice hideFree uri={uri} />
         {isSubscribed && <Icon icon={icons.HEART} />}
         {isRewardContent && <Icon iconColor="red" icon={icons.FEATURED} />}
@@ -82,15 +82,15 @@ class FileTile extends React.PureComponent<Props> {
       return (
         <div
           className={classnames('file-tile', {
-            'file-tile--small': size === 'small',
-            'file-tile--large': size === 'large',
+            'small': size === 'small',
+            'large': size === 'large',
           })}
         >
-          <div className="card--placeholder card__media" />
+          <div className="card__placeholder card__media" />
           <div className="file-tile__info">
-            <div className="card--placeholder placeholder__title--tile" />
-            <div className="card--placeholder placeholder__channel" />
-            <div className="card--placeholder placeholder__date" />
+            <div className="card__placeholder title" />
+            <div className="card__placeholder channel" />
+            <div className="card__placeholder date" />
           </div>
         </div>
       );
@@ -124,8 +124,8 @@ class FileTile extends React.PureComponent<Props> {
     return !name && hideNoResult ? null : (
       <section
         className={classnames('file-tile card--link', {
-          'file-tile--small': size === 'small',
-          'file-tile--large': size === 'large',
+          'small': size === 'small',
+          'large': size === 'large',
         })}
         onClick={onClick}
         onKeyUp={onClick}

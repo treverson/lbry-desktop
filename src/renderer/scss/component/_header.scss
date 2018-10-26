@@ -5,7 +5,6 @@
   align-items: center;
   background-color: $lbry-white;
   border-bottom: 1px solid $lbry-gray-1;
-  // box-shadow: 0 1px 5px rgba($lbry-black, 0.1);
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -17,11 +16,24 @@
 
   &:first-of-type {
     border-right: 1px solid $lbry-gray-1;
-    width: 250px;
+
+    @media (min-width: 601px) {
+      width: 250px;
+    }
+
+    @media (max-width: 600px) {
+      width: calc(var(--header-height) * 3 + 1px);
+    }
   }
 
   &:last-of-type {
-    width: 10rem;
+    @media (min-width: 601px) {
+      width: 10rem;
+    }
+
+    @media (max-width: 600px) {
+      width: var(--header-height);
+    }
   }
 }
 
@@ -51,6 +63,21 @@
 
   &.home {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E %3Cg transform='translate(-620.000000, -159.000000)' stroke='%23000' stroke-width='2'%3E %3Cg transform='translate(620.000000, 159.000000)'%3E %3Cpath d='M1, 11 L12, 2 C12, 2 22.9999989, 11.0000005 23, 11'/%3E %3Cpath d='M3, 10 C3, 10 3, 10.4453982 3, 10.9968336 L3, 20.0170446 C3, 20.5675806 3.43788135, 21.0138782 4.00292933, 21.0138781 L8.99707067, 21.0138779 C9.55097324, 21.0138779 10, 20.5751284 10, 20.0089602 L10, 15.0049177 C10, 14.449917 10.4433532, 14 11.0093689, 14 L12.9906311, 14 C13.5480902, 14 14, 14.4387495 14, 15.0049177 L14, 20.0089602 C14, 20.5639609 14.4378817, 21.0138779 15.0029302, 21.0138779 L19.9970758, 21.0138781 C20.5509789, 21.0138782 21.000006, 20.56848 21.000006, 20.0170446 L21.0000057, 10'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3C/svg%3E");
+  }
+
+  &.menu {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3E path %7B fill: none; fill-rule: evenodd; stroke: %23000; stroke-width: 1; %7D %3C/style%3E %3Cpath d='M3.5, 7 C3.5, 7.27910535 3.72002141, 7.5 3.99339768, 7.5 L20.0066023, 7.5 C20.2782464, 7.5 20.5, 7.27680164 20.5, 7 C20.5, 6.72089465 20.2799786, 6.5 20.0066023, 6.5 L3.99339768, 6.5 C3.72175357, 6.5 3.5, 6.72319836 3.5, 7 Z M3.5, 12 C3.5, 12.2791054 3.72002141, 12.5 3.99339768, 12.5 L20.0066023, 12.5 C20.2782464, 12.5 20.5, 12.2768016 20.5, 12 C20.5, 11.7208946 20.2799786, 11.5 20.0066023, 11.5 L3.99339768, 11.5 C3.72175357, 11.5 3.5, 11.7231984 3.5, 12 Z M3.5, 17 C3.5, 17.2791054 3.72002141, 17.5 3.99339768, 17.5 L20.0066023, 17.5 C20.2782464, 17.5 20.5, 17.2768016 20.5, 17 C20.5, 16.7208946 20.2799786, 16.5 20.0066023, 16.5 L3.99339768, 16.5 C3.72175357, 16.5 3.5, 16.7231984 3.5, 17 Z'/%3E %3C/svg%3E");
+
+    @media (min-width: 601px) {
+      display: none;
+    }
+  }
+
+  &.publish,
+  &.wallet {
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   &.publish {
