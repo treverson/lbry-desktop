@@ -3,6 +3,38 @@
   color: inherit;
   fill: currentColor; // for proper icon color
   position: relative;
+
+  &[aria-label="Play"] {
+    width: 5rem; height: 5rem;
+
+    border-radius: 50%;
+    color: $lbry-white;
+    line-height: 0;
+    padding-left: 0.4rem;
+    transition: background-color 0.2s;
+
+    &:not(:hover) {
+      background-color: rgba($lbry-black, 0.7);
+    }
+
+    &:hover {
+      background-color: $lbry-green-3;
+    }
+
+    svg {
+      width: 50%; height: 50%;
+      fill: $lbry-white;
+    }
+
+    .btn__label {
+      display: none;
+    }
+  }
+
+  &.primary {
+    // background-color: $lbry-teal-5;
+    // color: $lbry-white;
+  }
 }
 
 /*

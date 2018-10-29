@@ -187,20 +187,20 @@ class FilePage extends React.Component<Props> {
             ))}
 
           <div className="card__content">
-            <div className="card--space-between">
-              <h1>{title}</h1>
-              <div className="card__title-identity-icons">
-                {isRewardContent && (
-                  <Icon size={20} iconColor="red" tooltip="bottom" icon={icons.FEATURED} />
-                )}
-                <FilePrice filePage uri={normalizeURI(uri)} />
-              </div>
-            </div>
-            <span className="card__subtitle">
+            <h1 className="card__title card__title--file-page">{title}</h1>
+            <div className="card__subtitle">
               <UriIndicator uri={uri} link /> {__('published on')}{' '}
               <DateTime block={height} show={DateTime.SHOW_DATE} />
-            </span>
-            {metadata.nsfw && <div>NSFW</div>}
+            </div>
+
+            <div className="card__identity">
+              {isRewardContent && (
+                <Icon size={20} iconColor="red" tooltip="bottom" icon={icons.FEATURED} />
+              )}
+              {metadata.nsfw && <div>NSFW</div>}
+              <FilePrice filePage uri={normalizeURI(uri)} />
+            </div>
+
             <div className="card__actions card__actions--no-margin card__actions--between">
               <div className="card__actions">
                 {claimIsMine ? (
@@ -237,6 +237,7 @@ class FilePage extends React.Component<Props> {
                 <FileActions uri={uri} claimId={claim.claim_id} />
               </div>
             </div>
+
             <FormRow>
               <ToolTip direction="right" body={__('Automatically download and play free content.')}>
                 <FormField
@@ -248,12 +249,14 @@ class FilePage extends React.Component<Props> {
                 />
               </ToolTip>
             </FormRow>
-            <div className="card__content">
+
+            <div className="card__info">
               <FileDetails uri={uri} />
             </div>
           </div>
+
+          <RecommendedContent uri={uri} />
         </section>
-        <RecommendedContent uri={uri} />
       </Page>
     );
   }

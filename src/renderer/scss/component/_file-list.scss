@@ -36,12 +36,14 @@
   }
 
   &.small {
-    font-size: 1rem;
-    padding-top: $spacing-vertical * 2/3;
+    // font-size: 1rem;
+    padding-top: 1.25rem;
 
     .card__media {
-      flex: 0 0 var(--file-tile-media-width-small);
-      height: var(--file-tile-media-height-small);
+      // flex: 0 0 var(--file-tile-media-width-small);
+      // height: var(--file-tile-media-height-small);
+      flex: 0 0 13rem;
+      padding-top: 25%;
     }
   }
 
@@ -59,12 +61,14 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin-left: $spacing-vertical * 2/3;
+  margin-left: 1.25rem;
   max-width: 500px;
 }
 
 .file-tile__title {
-  font-size: 1.1em;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
 }
 
 .file-tile__uri {

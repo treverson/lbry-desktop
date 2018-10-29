@@ -1,3 +1,9 @@
+.content {
+  flex: 1;
+  overflow: auto;
+  position: relative; //
+}
+
 .content__cover {
   // Video thumbnail with play/download button
   top: 0;
@@ -23,11 +29,12 @@
 }
 
 .content__embedded {
+  margin-bottom: 2rem; padding-top: var(--video-aspect-ratio);
+
   align-items: center;
   background-color: $lbry-black;
   display: flex;
   justify-content: center;
-  padding-top: var(--video-aspect-ratio);
   position: relative;
   width: 100%;
 
@@ -98,5 +105,5 @@
 
 .content__wrapper {
   flex: 1 0 var(--file-page-min-width);
-  max-width: var(--card-max-width);
+  // max-width: var(--card-max-width);
 }
