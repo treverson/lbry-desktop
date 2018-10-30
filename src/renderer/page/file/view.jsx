@@ -20,8 +20,6 @@ import FileDownloadLink from 'component/fileDownloadLink';
 import classnames from 'classnames';
 import getMediaType from 'util/getMediaType';
 import RecommendedContent from 'component/recommendedContent';
-import { FormField, FormRow } from 'component/common/form';
-import ToolTip from 'component/common/tooltip';
 
 type Props = {
   claim: Claim,
@@ -44,7 +42,6 @@ type Props = {
   fetchCostInfo: string => void,
   prepareEdit: ({}, string) => void,
   setViewed: string => void,
-  autoplay: boolean,
   setClientSetting: (string, string | boolean | number) => void,
   /* eslint-disable react/no-unused-prop-types */
   checkSubscription: (uri: string) => void,
@@ -130,7 +127,6 @@ class FilePage extends React.Component<Props> {
       navigate,
       costInfo,
       fileInfo,
-      autoplay,
     } = this.props;
 
     // File info
@@ -186,23 +182,29 @@ class FilePage extends React.Component<Props> {
               </div>
             ))}
 
-          <div className="card__content">
+          <div className="card__content card__content--file-page">
             <h1 className="card__title card__title--file-page">{title}</h1>
-            <div className="card__subtitle">
-              <UriIndicator uri={uri} link /> {__('published on')}{' '}
-              <DateTime block={height} show={DateTime.SHOW_DATE} />
-            </div>
 
-            <div className="card__identity">
+            <div className="card__identity card__identity--file-page">
               {isRewardContent && (
                 <Icon size={20} iconColor="red" tooltip="bottom" icon={icons.FEATURED} />
               )}
-              {metadata.nsfw && <div>NSFW</div>}
+              {metadata.nsfw && <div className="card__identity__nsfw">NSFW</div>}
               <FilePrice filePage uri={normalizeURI(uri)} />
             </div>
 
-            <div className="card__actions card__actions--no-margin card__actions--between">
-              <div className="card__actions">
+            <div className="card__subtitle card__subtitle--file-page">
+              <div className="card__subtitle__channel">
+                <UriIndicator uri={uri} link />
+              </div>
+
+              <em className="card__subtitle__date">
+                {__('published on')} <DateTime block={height} show={DateTime.SHOW_DATE} />
+              </em>
+            </div>
+
+            <div className="card__actions card__actions--between">
+              <div className="card__actions__group">
                 {claimIsMine ? (
                   <Button
                     button="primary"
@@ -232,23 +234,11 @@ class FilePage extends React.Component<Props> {
                 />
               </div>
 
-              <div className="card__actions">
+              <div className="card__actions__group">
                 <FileDownloadLink uri={uri} />
                 <FileActions uri={uri} claimId={claim.claim_id} />
               </div>
             </div>
-
-            <FormRow>
-              <ToolTip direction="right" body={__('Automatically download and play free content.')}>
-                <FormField
-                  name="autoplay"
-                  type="checkbox"
-                  postfix={__('Autoplay')}
-                  checked={autoplay}
-                  onChange={this.onAutoplayChange}
-                />
-              </ToolTip>
-            </FormRow>
 
             <div className="card__info">
               <FileDetails uri={uri} />

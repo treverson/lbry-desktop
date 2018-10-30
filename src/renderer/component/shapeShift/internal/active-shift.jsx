@@ -78,9 +78,9 @@ class ActiveShapeShift extends React.PureComponent<Props> {
           <div>
             <p>
               Send up to{' '}
-              <span className="credit-amount--bold">
+              <strong>
                 {originCoinDepositMax} {shiftCoinType}
-              </span>{' '}
+              </strong>{' '}
               to the address below.
             </p>
             <ShiftMarketInfo

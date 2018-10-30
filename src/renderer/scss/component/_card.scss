@@ -268,7 +268,8 @@
 
 .card__actions {
   display: flex;
-  margin-top: $spacing-vertical * 2/3;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   &:not(.card__actions--vertical) {
     .btn:nth-child(n + 2),
@@ -301,7 +302,7 @@
   justify-content: center;
 
   .btn {
-    margin: 0 $spacing-vertical / 3;
+    // margin: 0 $spacing-vertical / 3;
   }
 }
 
@@ -309,17 +310,32 @@
   justify-content: flex-end;
 }
 
+/*
 .card__actions--no-margin {
   margin-top: 0;
 }
+*/
 
 .card__actions--vertical {
   align-items: flex-end;
   flex-direction: column;
-  margin-top: 0;
+  // margin-top: 0;
 
   .btn:not(:first-child) {
-    margin-top: $spacing-vertical * 1/3;
+    // margin-top: $spacing-vertical * 1/3;
+  }
+}
+
+.card__actions__group {
+  height: 2rem;
+
+  > * {
+    font-size: 1.15rem;
+    line-height: 2;
+
+    svg {
+      width: 1.5rem; height: 1.5rem;
+    }
   }
 }
 
@@ -346,13 +362,86 @@
 //  C O N T E N T
 
 .card__content {
+}
+
+.card__content--extra-padding {
+  margin-top: $spacing-vertical * 3/2;
+}
+
+.card__content--file-page {
   float: left;
   padding-right: 2rem;
   width: calc(100% - 30rem);
 }
 
-.card__content--extra-padding {
-  margin-top: $spacing-vertical * 3/2;
+
+
+//  C A R D
+//  I D E N T I T Y
+
+.card__identity--file-page {
+  align-items: center;
+  display: inline-flex;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding-top: 0.3rem;
+  vertical-align: middle;
+
+  > *:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.card__identity__amount,
+.card__identity__nsfw {
+  border-radius: 0.2rem;
+  cursor: default;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  line-height: 2;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.card__identity__amount--cost {
+  background-color: $lbry-yellow-2;
+}
+
+.card__identity__amount--free {
+  background-color: $lbry-blue-2;
+}
+
+.card__identity__nsfw {
+  background-color: $lbry-grape-2;
+}
+
+
+
+//  C A R D
+//  I N F O
+
+.card__info {
+  border-top: 1px solid $lbry-gray-1;
+  padding-top: 1rem;
+  word-wrap: break-word;
+}
+
+.card__info__text {
+  font-size: 1.15rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+.card__info__title {
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 
@@ -500,10 +589,12 @@
   top: 0; left: 0;
   bottom: 0; right: 0;
 
-  font-size: 3rem;
+  cursor: default;
+  font-size: 2.5rem;
   padding-top: calc(var(--video-aspect-ratio) / 4);
   position: absolute;
   text-align: center;
+  user-select: none;
 }
 
 
@@ -580,43 +671,19 @@
 
 
 //  C A R D
-//  S U B T E X T
-
-.card__subtext {
-  font-size: calc(var(--font-size-subtext-multiple) * 1rem);
-  font-weight: 700;
-  padding-top: $spacing-vertical * 1/3;
-  word-break: break-word;
-}
-
-.card__subtext-title {
-  font-size: calc(var(--font-size-subtext-multiple) * 1.2rem);
-
-  &:not(:first-of-type) {
-    margin-top: $spacing-vertical * 3/2;
-  }
-}
-
-.card__subtext--small {
-  font-size: calc(var(--font-size-subtext-multiple) * 0.8rem);
-}
-
-.card__subtext--large {
-  font-size: calc(var(--font-size-subtext-multiple) * 0.9rem);
-}
-
-
-
-//  C A R D
 //  T I T L E
 
 .card__title {
   font-weight: 600;
+  user-select: none;
   white-space: normal;
 }
 
 .card__title--file-page {
+  cursor: default;
+  display: inline;
   font-size: 2rem;
+  line-height: 1.33;
 }
 
 .card__date,
@@ -630,6 +697,17 @@
   > button {
     display: block;
   }
+}
+
+.card__subtitle--file-page {
+}
+
+.card__subtitle__channel {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card__subtitle__date {
 }
 
 .card__title--small + .card__subtitle,

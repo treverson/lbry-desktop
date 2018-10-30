@@ -39,37 +39,42 @@ const FileDetails = (props: Props) => {
     <React.Fragment>
       {description && (
         <React.Fragment>
-          <div className="card__subtext-title">About</div>
-          <div className="card__subtext">
+          <div className="card__info__title">About</div>
+          <div className="card__info__text">
             <MarkdownPreview content={description} promptLinks={true} />
           </div>
         </React.Fragment>
       )}
-      <div className="card__subtext-title">Info</div>
-      <div className="card__subtext">
-        <div>
+
+      <div className="card__info__title">Info</div>
+
+      <ul className="card__info__text">
+        <li>
           {__('Content-Type')}
           {': '}
           {mediaType}
-        </div>
-        <div>
+        </li>
+
+        <li>
           {__('Language')}
           {': '}
           {language}
-        </div>
-        <div>
+        </li>
+
+        <li>
           {__('License')}
           {': '}
           {license}
-        </div>
+        </li>
+
         {downloadPath && (
-          <div>
+          <li>
             {__('Downloaded to')}
             {': '}
             <Button button="link" onClick={() => openFolder(downloadPath)} label={downloadPath} />
-          </div>
+          </li>
         )}
-      </div>
+      </ul>
     </React.Fragment>
   );
 };

@@ -11,6 +11,7 @@ html {
 
 body {
   color: $lbry-black;
+  cursor: default;
   font-size: 1rem;
   font-weight: 400;
   height: 100%;
@@ -49,10 +50,6 @@ textarea {
 
 button + input {
   margin-left: $spacing-vertical * 2/3;
-}
-
-p:not(:first-of-type) {
-  margin-top: $spacing-vertical * 1/3;
 }
 
 
@@ -159,52 +156,6 @@ p:not(:first-of-type) {
 *::selection {
   background-color: $lbry-teal-3;
   color: $lbry-white;
-}
-
-.credit-amount {
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-.credit-amount--large {
-  font-size: 36px;
-  font-weight: 600;
-}
-
-.credit-amount--file-page {
-  border-radius: 5px;
-  font-weight: 700;
-  padding: 5px;
-}
-
-.credit-amount--free {
-  &:not(.credit-amount--file-page) {
-    color: $lbry-blue-5;
-  }
-
-  &.credit-amount--file-page {
-    background-color: $lbry-blue-2;
-    color: $lbry-blue-5;
-  }
-}
-
-.credit-amount--cost {
-  &:not(.credit-amount--file-page) {
-    color: $lbry-gray-5;
-  }
-
-  &.credit-amount--file-page {
-    background-color: $lbry-yellow-3;
-    color: $lbry-black;
-  }
-}
-
-.credit-amount--inherit {
-  background-color: inherit;
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  padding: 0;
 }
 
 .divider__horizontal {

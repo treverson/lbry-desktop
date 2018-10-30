@@ -77,12 +77,12 @@ class CreditAmount extends React.PureComponent<Props> {
     return (
       <span
         title={fullPrice}
-        className={classnames('credit-amount', {
-          'credit-amount--free': !large && isFree,
-          'credit-amount--cost': !large && !isFree,
-          'credit-amount--large': large,
-          'credit-amount--inherit': inheritStyle,
-          'credit-amount--file-page': filePage,
+        className={classnames('card__identity__amount', {
+          'card__identity__amount--free': !large && isFree,
+          'card__identity__amount--cost': !large && !isFree,
+          'card__identity__amount--large': large,
+          'card__identity__amount--inherit': inheritStyle,
+          'card__identity__amount--file-page': filePage,
         })}
       >
         {amountText}
