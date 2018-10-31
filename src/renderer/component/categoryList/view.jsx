@@ -214,9 +214,9 @@ class CategoryList extends React.PureComponent<Props, State> {
     const showScrollButtons = isCommunityTopBids ? !obscureNsfw : true;
 
     return (
-      <section className="cards row">
-        <header className="cards__header">
-          <div className="cards__header__title">
+      <section className="media-group--row">
+        <header className="media-group__header">
+          <div className="media-group__header__title">
             {categoryLink ? (
               <Button label={category} navigate="/show" navigateParams={{ uri: categoryLink }} />
             ) : (
@@ -232,7 +232,7 @@ class CategoryList extends React.PureComponent<Props, State> {
             )}
           </div>
           {showScrollButtons && (
-            <nav className="cards__header__navigation">
+            <nav className="media-group__header__navigation">
               <Button
                 className="previous"
                 disabled={!canScrollPrevious}
@@ -249,7 +249,7 @@ class CategoryList extends React.PureComponent<Props, State> {
           )}
         </header>
         {obscureNsfw && isCommunityTopBids ? (
-          <p className="cards__message help">
+          <p className="media__message media__message--help">
             {__(
               'The community top bids section is only visible if you allow mature content in the app. You can change your content viewing preferences'
             )}{' '}
@@ -257,7 +257,7 @@ class CategoryList extends React.PureComponent<Props, State> {
           </p>
         ) : (
           <ul
-            className="cards__scrollhouse"
+            className="media-scrollhouse"
             ref={ref => {
               this.rowItems = ref;
             }}

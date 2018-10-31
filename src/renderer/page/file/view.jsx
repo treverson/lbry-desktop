@@ -204,7 +204,7 @@ class FilePage extends React.Component<Props> {
             </div>
 
             <div className="card__actions card__actions--between">
-              <div className="card__actions__group">
+              <div className="card__actions__group--file-page">
                 {claimIsMine ? (
                   <Button
                     button="primary"
@@ -234,7 +234,7 @@ class FilePage extends React.Component<Props> {
                 />
               </div>
 
-              <div className="card__actions__group">
+              <div className="card__actions__group--file-page">
                 <FileDownloadLink uri={uri} />
                 <FileActions uri={uri} claimId={claim.claim_id} />
               </div>

@@ -52,18 +52,20 @@ class WalletAddress extends React.PureComponent<Props> {
         </div>
 
         <div className="card__actions">
-          <Button
-            button="primary"
-            label={__('Get New Address')}
-            icon={icons.REFRESH}
-            onClick={getNewAddress}
-            disabled={gettingNewAddress}
-          />
-          <Button
-            button="link"
-            label={showQR ? __('Hide QR code') : __('Show QR code')}
-            onClick={this.toggleQR.bind(this)}
-          />
+          <div className="card__actions__group">
+            <Button
+              button="primary"
+              label={__('Get New Address')}
+              icon={icons.REFRESH}
+              onClick={getNewAddress}
+              disabled={gettingNewAddress}
+            />
+            <Button
+              button="link"
+              label={showQR ? __('Hide QR code') : __('Show QR code')}
+              onClick={this.toggleQR.bind(this)}
+            />
+          </div>
         </div>
 
         {showQR && (

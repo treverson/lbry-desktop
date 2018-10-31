@@ -15,11 +15,8 @@
   // Paragraphs
   p {
     font-size: 1.15rem;
+    margin-bottom: 1rem;
     white-space: pre-line;
-
-    &:not(:last-of-type) {
-      margin-bottom: 1rem;
-    }
 
     svg {
       width: 1rem; height: 1rem;
@@ -107,7 +104,7 @@ blockquote {
   margin-bottom: 1rem;
   padding: 0.8rem;
 
-  background-color: $lbry-gray-1;
-  color: $lbry-gray-5;
-  border-left: 2px solid $lbry-gray-5;
+  background-color: rgba($lbry-cyan-1, 0.1);
+  // color: $lbry-gray-5;
+  border-left: 0.5rem solid $lbry-cyan-5;
 }

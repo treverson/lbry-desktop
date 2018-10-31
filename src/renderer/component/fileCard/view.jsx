@@ -61,11 +61,11 @@ class FileCard extends React.PureComponent<Props> {
 
     if (!claim && !pending) {
       return (
-        <div className="card small">
-          <div className="card__placeholder media" />
-          <div className="card__placeholder title" />
-          <div className="card__placeholder channel" />
-          <div className="card__placeholder date" />
+        <div className="media media--placeholder small">
+          <div className="media__thumb" />
+          <div className="media__title" />
+          <div className="media__channel" />
+          <div className="media__date" />
         </div>
       );
     }
@@ -93,23 +93,23 @@ class FileCard extends React.PureComponent<Props> {
         tabIndex="0"
         role="button"
         onClick={!pending ? () => navigate('/show', { uri }) : () => {}}
-        className={classnames('card small', {
+        className={classnames('media small', {
           'link': !pending,
           'pending': pending,
         })}
         onContextMenu={handleContextMenu}
       >
         <CardMedia thumbnail={thumbnail} />
-        <div className="card__title">
+        <div className="media__title">
           <TruncatedText text={title} lines={2} />
         </div>
-        <div className="card__subtitle">
+        <div className="media__subtitle">
           {pending ? <div>Pending...</div> : <UriIndicator uri={uri} link />}
         </div>
-        <div className="card__date">
+        <div className="media__date">
           <DateTime timeAgo block={height} />
         </div>
-        <div className="card__properties">
+        <div className="media__properties">
           <FilePrice hideFree uri={uri} />
           {isRewardContent && <Icon iconColor="red" icon={icons.FEATURED} />}
           {isSubscribed && <Icon icon={icons.HEART} />}
