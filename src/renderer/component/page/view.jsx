@@ -86,10 +86,10 @@ class Page extends React.PureComponent<Props, State> {
     return (
       <main
         className={classnames('main', {
-          'contained': !notContained && !noPadding && !extraPadding && !forContent,
-          'no-padding': noPadding,
-          'extra-padding': extraPadding,
-          'for-content': forContent,
+          'main--contained': !notContained && !noPadding && !extraPadding && !forContent,
+          'main--no-padding': noPadding,
+          'main--extra-padding': extraPadding,
+          'main--for-content': forContent,
         })}
       >
         {pageTitle && (

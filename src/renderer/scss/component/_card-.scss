@@ -105,9 +105,6 @@
 //  A C T I O N S
 
 .card__actions {
-  display: flex;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 .card__actions-bottom-corner {
@@ -123,8 +120,6 @@
 }
 
 .card__actions--between {
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .card__actions--center {
@@ -157,34 +152,9 @@
 }
 
 .card__actions__group {
-  > *:not(:last-child) {
-    margin-right: 1.5rem;
-  }
 }
 
 .card__actions__group--file-page {
-  height: 2rem;
-
-  > * {
-    font-size: 1.15rem;
-    line-height: 1.5rem;
-
-    &:not(:last-child) {
-      margin-right: 1.5rem;
-    }
-
-    .btn__content {
-      display: inline-flex;
-    }
-
-    .btn__label {
-      margin-left: 0.5rem;
-    }
-
-    svg {
-      width: 1.5rem; height: 1.5rem;
-    }
-  }
 }
 
 
@@ -213,13 +183,9 @@
 }
 
 .card__content--extra-padding {
-  margin-top: $spacing-vertical * 3/2;
 }
 
 .card__content--file-page {
-  float: left;
-  padding-right: 2rem;
-  width: calc(100% - 30rem);
 }
 
 
@@ -228,52 +194,26 @@
 //  I D E N T I T Y
 
 .card__identity--file-page {
-  align-items: center;
-  display: inline-flex;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  padding-top: 0.3rem;
-  vertical-align: middle;
-
-  > *:not(:last-child) {
-    margin-right: 0.5rem;
-  }
 }
 
 .card__identity__amount,
 .card__identity__nsfw {
-  border-radius: 0.2rem;
-  cursor: default;
-  display: inline-block;
-  font-weight: 600;
-  letter-spacing: 0.05rem;
-  line-height: 2;
-  padding-right: 0.5rem;
-  padding-left: 0.55rem;
-  user-select: none;
-  vertical-align: top;
-  white-space: nowrap;
 }
 
 .card__identity__amount:not(.card__identity__amount--large),
 .card__identity__nsfw {
-  font-size: 0.8rem;
 }
 
 .card__identity__amount--cost {
-  background-color: $lbry-yellow-2;
 }
 
 .card__identity__amount--free {
-  background-color: $lbry-blue-2;
 }
 
 .card__identity__amount--large {
-  font-size: 5rem;
 }
 
 .card__identity__nsfw {
-  background-color: $lbry-grape-2;
 }
 
 
@@ -282,22 +222,12 @@
 //  I N F O
 
 .card__info {
-  border-top: 1px solid $lbry-gray-1;
-  padding-top: 1rem;
-  word-wrap: break-word;
 }
 
 .card__info__text {
-  font-size: 1.15rem;
-
-  &:not(:last-of-type) {
-    margin-bottom: 2rem;
-  }
 }
 
 .card__info__title {
-  font-size: 1.25rem;
-  font-weight: 500;
 }
 
 
@@ -306,65 +236,12 @@
 //  L I S T
 
 .card__list {
-  .card {
-    display: inline-block;
-    margin-bottom: $spacing-vertical * 3/2;
-    vertical-align: top;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      width: calc((100% / 4) - (60px / 4)); // 60px === 20px margin-right * three cards
-
-      &:not(:nth-child(4n + 1)) {
-        margin-left: 20px;
-      }
-    }
-
-    @media only screen and (min-width: $medium-breakpoint) and (max-width: $large-breakpoint) {
-      width: calc((100% / 6) - (100px / 6));
-
-      &:not(:nth-child(6n + 1)) {
-        margin-left: 20px;
-      }
-    }
-
-    @media only screen and (min-width: $large-breakpoint) {
-      width: calc((100% / 8) - (140px / 8));
-
-      &:not(:nth-child(8n + 1)) {
-        margin-left: 20px;
-      }
-    }
-  }
 }
 
 .card__list--recommended {
-  border-left: 1px solid $lbry-gray-1;
-  float: right;
-  overflow: hidden;
-  padding-left: 2rem;
-  width: 30rem;
-
-  > span { // TODO: Give this span a class
-    color: $lbry-gray-5;
-    cursor: default;
-    font-size: 1.25rem;
-    letter-spacing: 0.05rem;
-    text-transform: lowercase;
-    user-select: none;
-  }
 }
 
 .card__list--rewards {
-  .card {
-    display: inline-block;
-    margin-bottom: 20px;
-    vertical-align: top;
-    width: calc(50% - 10px);
-
-    &:not(:nth-child(2n + 1)) {
-      margin-left: 20px;
-    }
-  }
 }
 
 
@@ -450,9 +327,6 @@
 //  P R O P E R T I E S
 
 .card__properties {
-  &:not(:empty) {
-    padding-top: 1rem;
-  }
 }
 
 
@@ -461,16 +335,9 @@
 //  T I T L E
 
 .card__title {
-  font-weight: 600;
-  user-select: none;
-  white-space: normal;
 }
 
 .card__title--file-page {
-  cursor: default;
-  display: inline;
-  font-size: 2rem;
-  line-height: 1.33;
 }
 
 .card__date,
@@ -482,16 +349,9 @@
 }
 
 .card__subtitle--file-page {
-  display: block;
-
-  > button {
-    display: block;
-  }
 }
 
 .card__subtitle__channel {
-  font-size: 1.25rem;
-  font-weight: 600;
 }
 
 .card__subtitle__date {

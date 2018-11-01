@@ -53,7 +53,7 @@ export default class RecommendedContent extends React.PureComponent<Props> {
     const { recommendedContent, isSearching, autoplay } = this.props;
 
     return (
-      <section className="card__list--recommended">
+      <section className="media-group--list--recommended">
         <span>Related</span>
 
         <FormRow>
@@ -80,7 +80,7 @@ export default class RecommendedContent extends React.PureComponent<Props> {
           ))}
         {recommendedContent &&
           !recommendedContent.length &&
-          !isSearching && <div className="card__subtitle">No related content found</div>}
+          !isSearching && <div className="media__subtitle">No related content found</div>}
       </section>
     );
   }

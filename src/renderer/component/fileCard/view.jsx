@@ -61,12 +61,12 @@ class FileCard extends React.PureComponent<Props> {
 
     if (!claim && !pending) {
       return (
-        <div className="media media--placeholder small">
+        <section className="media media--placeholder small">
           <div className="media__thumb" />
           <div className="media__title" />
           <div className="media__channel" />
           <div className="media__date" />
-        </div>
+        </section>
       );
     }
 

@@ -1,0 +1,33 @@
+.main {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &:not(.main--no-padding) {
+    padding: 2rem;
+  }
+
+  /*
+  &.contained {
+    max-width: 1000px;
+  }
+
+  &.extra-padding {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+  */
+}
+
+.main--contained {
+}
+
+.main--extra-padding {
+}
+
+.main--for-content {
+}
+
+.main--no-padding {
+}

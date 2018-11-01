@@ -24,7 +24,7 @@ const FileDetails = (props: Props) => {
 
   if (!claim || !metadata) {
     return (
-      <div className="card__content">
+      <div className="media__content">
         <span className="empty">{__('Empty claim or metadata info.')}</span>
       </div>
     );
@@ -39,16 +39,16 @@ const FileDetails = (props: Props) => {
     <React.Fragment>
       {description && (
         <React.Fragment>
-          <div className="card__info__title">About</div>
-          <div className="card__info__text">
+          <div className="media__info__title">About</div>
+          <div className="media__info__text">
             <MarkdownPreview content={description} promptLinks={true} />
           </div>
         </React.Fragment>
       )}
 
-      <div className="card__info__title">Info</div>
+      <div className="media__info__title">Info</div>
 
-      <ul className="card__info__text">
+      <ul className="media__info__text">
         <li>
           {__('Content-Type')}
           {': '}
