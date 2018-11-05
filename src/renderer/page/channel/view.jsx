@@ -80,17 +80,22 @@ class ChannelPage extends React.PureComponent<Props> {
 
     return (
       <Page notContained>
-        <section>
+        <header className="channel-info">
           <h1>
             {name}
             {fetching && <BusyIndicator />}
           </h1>
-        </section>
-        <div className="card__actions">
-          <SubscribeButton uri={permanentUrl} channelName={name} />
-          <ViewOnWebButton claimId={claimId} claimName={name} />
-        </div>
-        <section className="card__content">{contentList}</section>
+
+          <div className="channel-info__actions">
+            <div className="channel-info__actions__group">
+              <SubscribeButton uri={permanentUrl} channelName={name} />
+              <ViewOnWebButton claimId={claimId} claimName={name} />
+            </div>
+          </div>
+        </header>
+
+        <section className="media-group--list">{contentList}</section>
+
         {(!fetching || (claimsInChannel && claimsInChannel.length)) &&
           totalPages > 1 && (
             <FormRow verticallyCentered centered>
@@ -119,6 +124,7 @@ class ChannelPage extends React.PureComponent<Props> {
               />
             </FormRow>
           )}
+
         {!channelIsMine && <HiddenNsfwClaims className="card__content help" uri={uri} />}
       </Page>
     );

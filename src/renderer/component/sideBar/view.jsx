@@ -41,7 +41,7 @@ const SideBar = (props: Props) => {
         ))}
 
         <ul>
-          <li className="navigation__link title">Account</li>
+          <li className="navigation__link navigation__link--title">Account</li>
 
           {navLinks.secondary.map(({ label, path, active, subLinks = [] }) => (
             <li

@@ -54,9 +54,9 @@ export default class RecommendedContent extends React.PureComponent<Props> {
 
     return (
       <section className="media-group--list--recommended">
-        <span>Related</span>
-
         <FormRow>
+          <span>Related</span>
+
           <ToolTip direction="right" body={__('Automatically download and play free content.')}>
             <FormField
               name="autoplay"

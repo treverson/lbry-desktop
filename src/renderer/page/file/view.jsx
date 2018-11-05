@@ -188,7 +188,7 @@ class FilePage extends React.Component<Props> {
             {isRewardContent && (
               <Icon size={20} iconColor="red" tooltip="bottom" icon={icons.FEATURED} />
             )}
-            {metadata.nsfw && <div className="media__property--nsfw">NSFW</div>}
+            {metadata.nsfw && <div className="media__property media__property--nsfw media__property--amount-file-page">NSFW</div>}
             <FilePrice filePage uri={normalizeURI(uri)} />
           </div>
 

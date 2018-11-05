@@ -413,33 +413,60 @@
 }
 
 .media-group--list {
+  .card__list {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .media {
+    cursor: pointer;
     display: inline-block;
     margin-bottom: $spacing-vertical * 3/2;
     vertical-align: top;
+    width: 100%;
 
-    @media only screen and (max-width: $medium-breakpoint) {
-      width: calc((100% / 4) - (60px / 4)); // 60px === 20px margin-right * three cards
-
-      &:not(:nth-child(4n + 1)) {
-        margin-left: 20px;
-      }
+    @media (min-width: 1251px) {
+      flex-basis: calc(100% / 6);
+      max-width: calc((100% / 6) - 1rem);
     }
 
-    @media only screen and (min-width: $medium-breakpoint) and (max-width: $large-breakpoint) {
-      width: calc((100% / 6) - (100px / 6));
-
-      &:not(:nth-child(6n + 1)) {
-        margin-left: 20px;
-      }
+    @media (min-width: 851px) and (max-width: 1250px) {
+      flex-basis: calc(100% / 4);
+      max-width: calc((100% / 4) - 1rem);
     }
 
-    @media only screen and (min-width: $large-breakpoint) {
-      width: calc((100% / 8) - (140px / 8));
+    @media (min-width: 751px) and (max-width: 850px) {
+      flex-basis: calc(100% / 3);
+      max-width: calc((100% / 3) - 1rem);
+    }
 
-      &:not(:nth-child(8n + 1)) {
-        margin-left: 20px;
-      }
+    @media (min-width: 601px) and (max-width: 750px) {
+      flex-basis: calc(100% / 2);
+      max-width: calc((100% / 2) - 1rem);
+    }
+
+    @media (max-width: 600px) {
+      flex-basis: calc(100% / 3);
+      max-width: calc((100% / 3) - 1rem);
+    }
+  }
+
+  .media__thumb {
+    margin-bottom: 1rem;
+  }
+
+  .media__title {
+    @media (min-width: 601px) {
+      font-size: 1.15rem;
+      height: 4rem;
+      line-height: 1.33;
+    }
+
+    @media (max-width: 600px) {
+      height: 3rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -451,13 +478,17 @@
   padding-left: 2rem;
   width: 30rem;
 
-  > span { // TODO: Give this span a class
-    color: $lbry-gray-5;
-    cursor: default;
-    font-size: 1.25rem;
-    letter-spacing: 0.05rem;
-    text-transform: lowercase;
-    user-select: none;
+  > .form-row {
+    border-bottom: 1px solid $lbry-gray-1;
+    font-weight: 500;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+
+    span {
+      font-size: 1.1rem; // for visual weight
+    }
   }
 }
 
