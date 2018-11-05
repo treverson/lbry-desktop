@@ -83,13 +83,14 @@ export const doFetchMySubscriptions = () => (dispatch: ReduxDispatch, getState: 
           }
         });
 
-        return Promise.all(subsNotInDB.map(payload => Lbryio.call('subscription', 'new', payload)))
-          .then(() => subscriptionsToReturn)
-          .catch(
-            () =>
-              // let it fail, we will try again when the navigate to the subscriptions page
-              subscriptionsToReturn
-          );
+        return subscriptionsToReturn;
+        // return Promise.all(subsNotInDB.map(payload => Lbryio.call('subscription', 'new', payload)))
+        //   .then(() => subscriptionsToReturn)
+        //   .catch(
+        //     () =>
+        //       // let it fail, we will try again when the navigate to the subscriptions page
+        //       subscriptionsToReturn
+        //   );
       }
 
       // DB is already synced, just return the subscriptions in redux
