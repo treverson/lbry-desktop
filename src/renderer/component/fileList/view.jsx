@@ -179,7 +179,10 @@ class FileList extends React.PureComponent<Props, State> {
             </FormField>
           )}
         </div>
-        <div className="card__list">{content}</div>
+
+        <section className="media-group--list">
+          <div className="card__list">{content}</div>
+        </section>
       </section>
     );
   }

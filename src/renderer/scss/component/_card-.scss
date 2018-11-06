@@ -71,30 +71,17 @@
 //
 
 .card--link {
-  cursor: pointer;
 }
 
 .card--disabled {
-  opacity: 0.3;
-  pointer-events: none;
 }
 
 .card--section {
-  background-color: $lbry-white;
-  margin-bottom: 1.5rem;
-  padding: 2rem;
-
   .card__title {
-    font-size: 1.25rem;
   }
 }
 
 .card--wallet-balance {
-  background-image: url('../../../static/img/stripe-background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $lbry-white;
-  justify-content: space-between;
 }
 
 //

@@ -6,18 +6,18 @@
 }
 
 .file-list__header {
-  font-size: 24px;
+  font-size: 2rem;
   padding-top: $spacing-vertical * 4/3;
 
   .tooltip {
-    margin-left: 5px;
+    margin-left: 0.5rem;
   }
 }
 
 .file-list__sort {
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 20px;
+  padding-bottom: 1.5rem;
 }
 
 

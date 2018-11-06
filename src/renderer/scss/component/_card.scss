@@ -1,12 +1,41 @@
 .card {
+  background-color: $lbry-white;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.card--disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.card--link {
+  cursor: pointer;
 }
 
 .card--section {
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+}
+
+.card--wallet-balance {
+  background-image: url('../../../static/img/stripe-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $lbry-white;
+  justify-content: space-between;
 }
 
 
 
 .card__content {
+  font-size: 1.15rem;
+}
+
+.card__header {
+  margin-bottom: 3rem;
 }
 
 .card__message {
@@ -21,8 +50,14 @@
 .card__message--success {
 }
 
+
+
 .card__subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .card__title {
+  font-size: 2rem;
+  font-weight: 600;
 }

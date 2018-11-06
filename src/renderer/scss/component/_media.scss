@@ -1,6 +1,4 @@
 .media {
-  // flex: 1;
-  // overflow: auto;
 }
 
 
@@ -209,13 +207,7 @@
 }
 
 .media__property {
-  border-radius: 0.2rem;
-  cursor: default;
   font-weight: 600;
-  letter-spacing: 0.05rem;
-  line-height: 2;
-  padding-right: 0.5rem;
-  padding-left: 0.55rem;
   user-select: none;
   vertical-align: top;
   white-space: nowrap;
@@ -225,7 +217,12 @@
   }
 
   &:not(.media__property--amount-large) {
+    border-radius: 0.2rem;
     font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    line-height: 2;
+    padding-right: 0.5rem;
+    padding-left: 0.55rem;
   }
 }
 
@@ -256,6 +253,7 @@
 
 .media__property--amount-large {
   font-size: 5rem;
+  line-height: 1;
 }
 
 .media__property--nsfw {
@@ -309,9 +307,7 @@
 //  M E D I A
 //  T H U M B
 
-.media__thumb { // .card__media becomes .media-item
-  // margin-bottom: 1rem; padding-top: var(--video-aspect-ratio); // these two should not be here, due to other classes that may be added
-
+.media__thumb {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -414,43 +410,44 @@
 
 .media-group--list {
   .card__list {
-    display: flex;
-    flex: 0 1 auto;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-gap: 1rem;
+
+    @media (min-width: 2001px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 10), 1fr));
+    }
+
+    @media (min-width: 1801px) and (max-width: 2000px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 8), 1fr));
+    }
+
+    @media (min-width: 1551px) and (max-width: 1800px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 7), 1fr));
+    }
+
+    @media (min-width: 1051px) and (max-width: 1550px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 6), 1fr));
+    }
+
+    @media (min-width: 901px) and (max-width: 1050px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 5), 1fr));
+    }
+
+    @media (min-width: 751px) and (max-width: 900px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+    }
+
+    @media (max-width: 750px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr));
+    }
   }
 
   .media {
     cursor: pointer;
     display: inline-block;
-    margin-bottom: $spacing-vertical * 3/2;
+    margin-bottom: 2rem;
     vertical-align: top;
     width: 100%;
-
-    @media (min-width: 1251px) {
-      flex-basis: calc(100% / 6);
-      max-width: calc((100% / 6) - 1rem);
-    }
-
-    @media (min-width: 851px) and (max-width: 1250px) {
-      flex-basis: calc(100% / 4);
-      max-width: calc((100% / 4) - 1rem);
-    }
-
-    @media (min-width: 751px) and (max-width: 850px) {
-      flex-basis: calc(100% / 3);
-      max-width: calc((100% / 3) - 1rem);
-    }
-
-    @media (min-width: 601px) and (max-width: 750px) {
-      flex-basis: calc(100% / 2);
-      max-width: calc((100% / 2) - 1rem);
-    }
-
-    @media (max-width: 600px) {
-      flex-basis: calc(100% / 3);
-      max-width: calc((100% / 3) - 1rem);
-    }
   }
 
   .media__thumb {

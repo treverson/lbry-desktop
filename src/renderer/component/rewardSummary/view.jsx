@@ -23,38 +23,44 @@ class RewardSummary extends React.Component<Props> {
 
     return (
       <section className="card card--section">
-        <div className="card__title">
-          {__('Rewards')}
-          {fetching && <BusyIndicator />}
+        <header className="card__header">
+          <div className="card__title">
+            {__('Rewards')}
+            {fetching && <BusyIndicator />}
+          </div>
+          <p className="card__subtitle">
+            {!fetching &&
+              (hasRewards ? (
+                <React.Fragment>
+                  {__('You have')}
+                  &nbsp;
+                  <CreditAmount inheritStyle amount={unclaimedRewardAmount} precision={8} />
+                  &nbsp;
+                  {__('in unclaimed rewards')}.
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  {__('There are no rewards available at this time, please check back later')}.
+                </React.Fragment>
+              ))}
+          </p>
+        </header>
+
+        <div className="card__content">
+          <div className="card__actions">
+            <Button
+              button="primary"
+              navigate="/rewards"
+              label={hasRewards ? __('Claim Rewards') : __('View Rewards')}
+            />
+          </div>
+  
+          <p className="help help--padded">
+            {__('Read our')}{' '}
+            <Button button="link" label={__('FAQ')} href="https://lbry.io/faq/rewards" />{' '}
+            {__('to learn more about LBRY Rewards')}.
+          </p>
         </div>
-        <p className="card__subtitle">
-          {!fetching &&
-            (hasRewards ? (
-              <React.Fragment>
-                {__('You have')}
-                &nbsp;
-                <CreditAmount inheritStyle amount={unclaimedRewardAmount} precision={8} />
-                &nbsp;
-                {__('in unclaimed rewards')}.
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                {__('There are no rewards available at this time, please check back later')}.
-              </React.Fragment>
-            ))}
-        </p>
-        <div className="card__actions">
-          <Button
-            button="primary"
-            navigate="/rewards"
-            label={hasRewards ? __('Claim Rewards') : __('View Rewards')}
-          />
-        </div>
-        <p className="help help--padded">
-          {__('Read our')}{' '}
-          <Button button="link" label={__('FAQ')} href="https://lbry.io/faq/rewards" />{' '}
-          {__('to learn more about LBRY Rewards')}.
-        </p>
       </section>
     );
   }
