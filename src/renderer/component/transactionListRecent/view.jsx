@@ -23,11 +23,15 @@ class TransactionListRecent extends React.PureComponent<Props> {
 
     return (
       <section className="card card--section">
-        <div className="card__title">{__('Recent Transactions')}</div>
-        <div className="card__subtitle">
-          {__('To view all of your transactions, navigate to the')}{' '}
-          <Button button="link" navigate="/history" label={__('transactions page')} />.
-        </div>
+        <header className="card__header">
+          <h2 className="card__title">{__('Recent Transactions')}</h2>
+
+          <p className="card__subtitle">
+            {__('To view all of your transactions, navigate to the')}{' '}
+            <Button button="link" navigate="/history" label={__('transactions page')} />.
+          </p>
+        </header>
+
         {fetchingTransactions && (
           <div className="card__content">
             <BusyIndicator message={__('Loading transactions')} />
@@ -41,13 +45,15 @@ class TransactionListRecent extends React.PureComponent<Props> {
           />
         )}
         {hasTransactions && (
-          <div className="card__actions">
-            <Button
-              button="primary"
-              navigate="/history"
-              label={__('Full History')}
-              icon={icons.CLOCK}
-            />
+          <div className="card__content">
+            <div className="card__actions">
+              <Button
+                button="primary"
+                navigate="/history"
+                label={__('Full History')}
+                icon={icons.CLOCK}
+              />
+            </div>
           </div>
         )}
       </section>

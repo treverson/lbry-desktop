@@ -26,8 +26,8 @@ const RewardTile = (props: Props) => {
   return (
     <section className="card card--section">
       <header className="card__header">
-        <div className="card__title">{reward.reward_title}</div>
-        <div className="card__subtitle">{reward.reward_description}</div>
+        <h2 className="card__title">{reward.reward_title}</h2>
+        <p className="card__subtitle">{reward.reward_description}</p>
       </header>
 
       <div className="card__content">

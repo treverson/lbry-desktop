@@ -24,10 +24,11 @@ class RewardSummary extends React.Component<Props> {
     return (
       <section className="card card--section">
         <header className="card__header">
-          <div className="card__title">
+          <h2 className="card__title">
             {__('Rewards')}
             {fetching && <BusyIndicator />}
-          </div>
+          </h2>
+
           <p className="card__subtitle">
             {!fetching &&
               (hasRewards ? (
@@ -54,8 +55,8 @@ class RewardSummary extends React.Component<Props> {
               label={hasRewards ? __('Claim Rewards') : __('View Rewards')}
             />
           </div>
-  
-          <p className="help help--padded">
+
+          <p className="help">
             {__('Read our')}{' '}
             <Button button="link" label={__('FAQ')} href="https://lbry.io/faq/rewards" />{' '}
             {__('to learn more about LBRY Rewards')}.
