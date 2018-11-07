@@ -46,7 +46,7 @@ class BackupPage extends React.PureComponent<Props> {
                     'However, it is fairly easy to back up manually. To backup your wallet, make a copy of the folder listed below:'
                   )}
                 </p>
-                <p className="card__success-msg">{lbryumWalletDir}</p>
+                <p className="card__message">{lbryumWalletDir}</p>
                 <p>
                   {__(
                     'Access to these files are equivalent to having access to your credits. Keep any copies you make of your wallet in a secure place.'

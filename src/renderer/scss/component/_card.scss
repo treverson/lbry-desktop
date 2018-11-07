@@ -2,34 +2,36 @@
   background-color: $lbry-white;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
-}
 
-
-
-.card--disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.card--link {
-  cursor: pointer;
-}
-
-.card--section {
-  margin-bottom: 1.5rem;
-  padding: 2rem;
-
-  .card__content:not(:last-child) {
-    margin-bottom: 1.5rem;
+  html[data-theme='dark'] & {
+    background-color: rgba($lbry-white, 0.1);
   }
-}
 
-.card--wallet-balance {
-  background-image: url('../../../static/img/stripe-background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $lbry-white;
-  justify-content: space-between;
+  &--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &--link {
+    cursor: pointer;
+  }
+
+  &--section {
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+
+    .card__content:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &--wallet-balance {
+    background-image: url('../../../static/img/stripe-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $lbry-white;
+    justify-content: space-between;
+  }
 }
 
 
@@ -42,6 +44,10 @@
 
 .card__content {
   font-size: 1.15rem;
+
+  p:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
 }
 
 .card__header {
@@ -55,15 +61,28 @@
 }
 
 .card__message {
-}
+  border-left: 0.5rem solid;
+  padding: 1rem 1rem 1rem 1.5rem;
 
-.card__message--error {
-}
+  &:not(&--error):not(&--failure):not(&--success) {
+    background-color: rgba($lbry-teal-1, 0.1);
+    border-color: $lbry-teal-3;
+  }
 
-.card__message--failure {
-}
+  &--error {
+    background-color: rgba($lbry-orange-1, 0.1);
+    border-color: $lbry-orange-3;
+  }
 
-.card__message--success {
+  &--failure {
+    background-color: rgba($lbry-red-1, 0.1);
+    border-color: $lbry-red-3;
+  }
+
+  &--success {
+    background-color: rgba($lbry-green-1, 0.1);
+    border-color: $lbry-green-3;
+  }
 }
 
 
@@ -72,6 +91,11 @@
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   user-select: none;
+
+  .media__property {
+    bottom: -0.12rem;
+    position: relative;
+  }
 }
 
 .card__title {
@@ -85,7 +109,7 @@
 .card__list {
   display: grid;
   grid-gap: 1rem;
-}
 
-.card__list--rewards {
+  &--rewards {
+  }
 }

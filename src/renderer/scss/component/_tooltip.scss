@@ -14,7 +14,10 @@
     }
   }
 
-  &.tooltip--on-component {
+  &--icon {
+  }
+
+  &--on-component {
     .tooltip__body {
       margin-top: 10px;
     }
@@ -42,15 +45,11 @@
       content: ' ';
       position: absolute;
     }
-  }
 
-  .tooltip__body--short {
-    width: 130px;
+    &--short {
+      width: 130px;
+    }
   }
-}
-
-.tooltip--icon {
-  // margin-top: 5px;
 }
 
 .tooltip--label {

@@ -4,19 +4,7 @@
   position: relative;
   z-index: 1;
 
-  &:not(.main--no-padding) {
+  &:not(&--no-padding) {
     padding: 2rem;
   }
-}
-
-.main--contained {
-}
-
-.main--extra-padding {
-}
-
-.main--for-content {
-}
-
-.main--no-padding {
 }

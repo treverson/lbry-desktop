@@ -4,10 +4,14 @@
   bottom: 0;
   right: 0;
 
-  background-color: rgba($lbry-gray-1, 0.3);
+  background-color: mix($lbry-white, $lbry-gray-1, 70%);
   display: flex;
   position: absolute;
   z-index: 0;
+
+  html[data-theme='dark'] & {
+    background-color: $lbry-black;
+  }
 
   // When scrolling on the homepage past the featured section
   // `z-index: 1` should be added for aesthetic reasons.
@@ -19,6 +23,10 @@
     background-color: $lbry-gray-1;
     content: "";
     position: absolute;
+
+    html[data-theme='dark'] & {
+      background-color: $lbry-black;
+    }
   }
 
   @media only screen and (min-width: $medium-breakpoint) {

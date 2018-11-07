@@ -45,6 +45,14 @@
     .card__properties {
       bottom: 0.5rem; left: -13.5rem;
       position: absolute;
+
+      > * {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+      }
     }
 
     .media__thumb {

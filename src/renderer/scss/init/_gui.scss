@@ -17,6 +17,10 @@ body {
   height: 100%;
   line-height: 1.5;
   overflow: hidden;
+
+  html[data-theme='dark'] & {
+    color: mix($lbry-white, $lbry-gray-3, 50%);
+  }
 }
 
 *::selection {
@@ -38,6 +42,12 @@ input {
     flex: 1;
     padding: 0.8rem 1rem;
     text-overflow: ellipsis;
+
+    html[data-theme='dark'] & {
+      background-color: rgba($lbry-gray-1, 0.1);
+      border-color: $lbry-gray-5;
+      color: inherit;
+    }
   }
 
   &:not(.input-copyable):not(.wunderbar__input) {
@@ -143,10 +153,15 @@ button + input {
   background-color: rgba($lbry-blue-1, 0.1);
   border-radius: 0.5rem;
   color: $lbry-gray-5;
+  display: block;
   margin-bottom: 1rem;
   padding: 1rem;
   position: relative;
   top: 1rem;
+
+  html[data-theme='dark'] & {
+    color: inherit;
+  }
 }
 
 .meta {

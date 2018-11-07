@@ -71,10 +71,13 @@ export default class extends React.PureComponent<Props> {
         </FormRow>
         {!subscriptions.length && (
           <div className="page__empty">
-            {__("It looks like you aren't subscribed to any channels yet.")}
-            <div className="card__actions card__actions--center">
-              <Button button="primary" navigate="/discover" label={__('Explore new content')} />
-            </div>
+            <section className="card card--section">
+              <p className="card__content">{__("It looks like you aren't subscribed to any channels yet.")}</p>
+
+              <div className="card__actions card__actions--center">
+                <Button button="primary" navigate="/discover" label={__('Explore new content')} />
+              </div>
+            </section>
           </div>
         )}
         {!!claimList.length && <FileList hideFilter sortByHeight fileInfos={claimList} />}
