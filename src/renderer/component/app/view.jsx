@@ -42,7 +42,7 @@ class App extends React.PureComponent<Props> {
     this.mainContent = mainContent;
 
     if (this.mainContent) {
-      this.mainContent.addEventListener('scroll', throttle(this.scrollListener, 750));
+      this.mainContent.addEventListener('scroll', throttle(this.scrollListener, 150));
     }
 
     ReactModal.setAppElement('#window'); // fuck this
@@ -79,8 +79,16 @@ class App extends React.PureComponent<Props> {
 
   scrollListener() {
     const { recordScroll } = this.props;
+    const scrollAmount = document.querySelector('#content').scrollTop;
     if (this.mainContent) {
       recordScroll(this.mainContent.scrollTop);
+    }
+
+    // 2rem is 24px b/c body text is 12px
+    if (scrollAmount >= 24) {
+      document.querySelector('main.page').classList.add('scrolled');
+    } else {
+      document.querySelector('main.page').classList.remove('scrolled');
     }
   }
 

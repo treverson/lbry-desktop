@@ -13,9 +13,14 @@
     background-color: $lbry-black;
   }
 
-  // When scrolling on the homepage past the featured section
-  // `z-index: 1` should be added for aesthetic reasons.
-  // (thumbnails with white appear on top of the .page border)
+  // When scrolling on the homepage past the padding, `z-index: 1`
+  // is added for aesthetic reasons. Without, the wunderbar would
+  // have no separation from the content.
+
+  &.scrolled::after {
+    z-index: 1;
+  }
+
   &::after {
     width: 100%; height: 1px;
     top: 0; left: 0;
