@@ -10,10 +10,7 @@
     }
 
     td:nth-of-type(2) {
-      max-width: 20vw; // Tourniquets text over 20vw
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      @include constrict;
     }
   }
 

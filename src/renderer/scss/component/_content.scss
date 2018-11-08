@@ -30,6 +30,10 @@
 
   &:not(.card__media--nsfw) {
     background-color: $lbry-black;
+
+    html[data-theme='dark'] & {
+      background-color: rgba($lbry-white, 0.1);
+    }
   }
 
   &:hover {

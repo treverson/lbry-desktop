@@ -65,10 +65,6 @@ textarea {
   font-size: 0.8rem;
 }
 
-button + input {
-  // margin-left: $spacing-vertical * 2/3;
-}
-
 
 
 .columns {
@@ -107,7 +103,7 @@ button + input {
 }
 
 .disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -146,7 +142,6 @@ button + input {
 .alert-text {
   color: $lbry-red-3;
   font-weight: 600;
-  user-select: none;
 }
 
 .help {
@@ -174,6 +169,10 @@ button + input {
 .empty {
   color: $lbry-gray-5;
   font-style: italic;
+
+  html[data-theme='dark'] & {
+    color: inherit;
+  }
 }
 
 .qr-code {

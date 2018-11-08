@@ -49,6 +49,10 @@
 
   .btn.btn--alt {
     background-color: $lbry-white; // Set modal buttons bg color
+
+    html[data-theme='dark'] & {
+      background-color: transparent;
+    }
   }
 
   &--fullscreen {

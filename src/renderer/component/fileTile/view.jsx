@@ -53,7 +53,7 @@ class FileTile extends React.PureComponent<Props> {
     const isRewardContent = claim && rewardedContentClaimIds.includes(claim.claim_id);
 
     return (
-      <div className={classnames('card__properties', { card__subtitle: size === 'large' })}>
+      <div className={classnames('media__properties', { card__subtitle: size === 'large' })}>
         <FilePrice hideFree uri={uri} />
         {isSubscribed && <Icon icon={icons.HEART} />}
         {isRewardContent && <Icon iconColor="red" icon={icons.FEATURED} />}
@@ -123,9 +123,9 @@ class FileTile extends React.PureComponent<Props> {
 
     return !name && hideNoResult ? null : (
       <section
-        className={classnames('file-tile card--link', {
-          'small': size === 'small',
-          'large': size === 'large',
+        className={classnames('media card--link', {
+          'media--small': size === 'small',
+          'media--large': size === 'large',
         })}
         onClick={onClick}
         onKeyUp={onClick}
@@ -133,21 +133,23 @@ class FileTile extends React.PureComponent<Props> {
         tabIndex="0"
       >
         <CardMedia title={title || name} thumbnail={thumbnail} />
-        <div className="file-tile__info">
-          <div className="file-tile__title">
+        <div className="media__info">
+          <div className="media__title">
             {(title || name) && (
               <TruncatedText text={title || name} lines={size === 'small' ? 2 : 3} />
             )}
           </div>
-          <div className="card__subtitle">
+          <div className="media__subtitle">
             <UriIndicator uri={uri} link />
           </div>
-          <div className="card__subtitle card--space-between">
-            <DateTime timeAgo block={height} />
+          <div className="media__subtitle card--space-between">
+            <div className="media__date">
+              <DateTime timeAgo block={height} />
+            </div>
             {size !== 'large' && this.renderFileProperties()}
           </div>
           {displayDescription && (
-            <div className="card__subtext">
+            <div className="media__subtext">
               <TruncatedText text={description} lines={size === 'large' ? 4 : 3} />
             </div>
           )}

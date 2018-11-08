@@ -9,7 +9,6 @@
   padding: 0.5rem 1.25rem 0.5rem 1rem;
   position: fixed;
   transition: all var(--transition-duration) var(--transition-type);
-  user-select: none;
   z-index: 10000; // hack to get it over react modal
 }
 

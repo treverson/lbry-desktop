@@ -9,12 +9,15 @@
 
   border-radius: 50%;
   display: inline-block;
-  font-weight: 600;
-  line-height: 3rem;
   text-align: center;
 
   &:not(&--selected):not(&--break):not(.disabled):hover {
     background-color: $lbry-gray-1;
+  }
+
+  &:not(&--previous):not(&--next) {
+    font-weight: 600;
+    line-height: 3rem;
   }
 
   &:not(&--break):not(.disabled) {
@@ -22,7 +25,15 @@
   }
 
   &--break {
-    user-select: none;
+    opacity: 0.3;
+  }
+
+  &--previous,
+  &--next {
+    bottom: -0.4rem;
+    font-size: 2.5rem;
+    line-height: 1;
+    position: relative;
   }
 
   &--selected {
@@ -33,9 +44,4 @@
   > a {
     display: block;
   }
-}
-
-.pagination__item--previous,
-.pagination__item--next {
-  // font-size: 1.2rem;
 }

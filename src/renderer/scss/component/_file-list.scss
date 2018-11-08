@@ -1,3 +1,21 @@
+.tile {
+  &--large {
+  }
+
+  &--small {
+  }
+}
+
+.tile__info {
+}
+
+.tile__subtitle {
+}
+
+.tile__title {
+}
+
+/*
 .file-list {
   display: grid;
   grid-gap: $spacing-vertical * 2/3;
@@ -89,3 +107,4 @@
 .file-tile__uri {
   color: $lbry-gray-5;
 }
+*/

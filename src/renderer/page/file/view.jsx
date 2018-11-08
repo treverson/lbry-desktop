@@ -239,7 +239,7 @@ class FilePage extends React.Component<Props> {
             </div>
           </div>
 
-          <div className="media__info">
+          <div className="media__info--file-page">
             <FileDetails uri={uri} />
           </div>
         </div>

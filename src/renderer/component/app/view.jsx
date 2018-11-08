@@ -84,7 +84,7 @@ class App extends React.PureComponent<Props> {
       recordScroll(this.mainContent.scrollTop);
     }
 
-    // 2rem is 24px b/c body text is 12px
+    // 2rem (padding) is 24px b/c body text is 12px
     if (scrollAmount >= 24) {
       document.querySelector('main.page').classList.add('scrolled');
     } else {
