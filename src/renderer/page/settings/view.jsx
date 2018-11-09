@@ -182,21 +182,30 @@ class SettingsPage extends React.PureComponent<Props, State> {
         ) : (
           <React.Fragment>
             <section className="card card--section">
-              <div className="card__title">{__('Download Directory')}</div>
-              <span className="card__subtitle">{__('LBRY downloads will be saved here.')}</span>
-              <FileSelector
-                type="openDirectory"
-                currentPath={daemonSettings.download_directory}
-                onFileChosen={this.onDownloadDirChange}
-              />
+              <header className="card__header">
+                <h2 className="card__title">{__('Download Directory')}</h2>
+                <p className="card__subtitle">{__('LBRY downloads will be saved here.')}</p>
+              </header>
+
+              <div className="card__content">
+                <FileSelector
+                  type="openDirectory"
+                  currentPath={daemonSettings.download_directory}
+                  onFileChosen={this.onDownloadDirChange}
+                />
+              </div>
             </section>
+
             <section className="card card--section">
-              <div className="card__title">{__('Max Purchase Price')}</div>
-              <span className="card__subtitle">
-                {__(
-                  'This will prevent you from purchasing any content over a certain cost, as a safety measure.'
-                )}
-              </span>
+              <header className="card__header">
+                <h2 className="card__title">{__('Max Purchase Price')}</h2>
+                <p className="card__subtitle">
+                  {__(
+                    'This will prevent you from purchasing any content over a certain cost, as a safety measure.'
+                  )}
+                </p>
+              </header>
+
               <div className="card__content">
                 <FormField
                   type="radio"
@@ -235,7 +244,6 @@ class SettingsPage extends React.PureComponent<Props, State> {
             <section className="card card--section">
               <header className="card__header">
                 <h2 className="card__title">{__('Purchase Confirmations')}</h2>
-
                 <p className="card__subtitle">
                   {__(
                     "When this option is chosen, LBRY won't ask you to confirm downloads below your chosen price."
@@ -390,9 +398,8 @@ class SettingsPage extends React.PureComponent<Props, State> {
                   postfix={__('Encrypt my wallet with a custom password.')}
                   helper={
                     <React.Fragment>
-                      {__(
-                        'Secure your local wallet data with a custom password. <strong>Lost passwords cannot be recovered.</strong>'
-                      )}{' '}
+                      {__('Secure your local wallet data with a custom password.')}{' '}
+                      <strong>{__('Lost passwords cannot be recovered.')}{' '}</strong>
                       <Button
                         button="link"
                         label={__('Learn more')}
@@ -407,7 +414,6 @@ class SettingsPage extends React.PureComponent<Props, State> {
             <section className="card card--section">
               <header className="card__header">
                 <h2 className="card__title">{__('Application Cache')}</h2>
-
                 <p className="card__subtitle">
                   {__('This will clear the application cache. Your wallet will not be affected.')}
                 </p>

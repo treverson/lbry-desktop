@@ -150,6 +150,9 @@ input {
 }
 
 button {
+  background-color: transparent;
+  color: inherit;
+
   &:not(:disabled) {
     cursor: pointer;
   }

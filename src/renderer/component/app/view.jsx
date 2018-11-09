@@ -42,7 +42,7 @@ class App extends React.PureComponent<Props> {
     this.mainContent = mainContent;
 
     if (this.mainContent) {
-      this.mainContent.addEventListener('scroll', throttle(this.scrollListener, 150));
+      this.mainContent.addEventListener('scroll', throttle(this.scrollListener, 750));
     }
 
     ReactModal.setAppElement('#window'); // fuck this

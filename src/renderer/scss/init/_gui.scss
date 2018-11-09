@@ -42,6 +42,7 @@ input {
     flex: 1;
     padding: 0.8rem 1rem;
     text-overflow: ellipsis;
+    user-select: text;
 
     html[data-theme='dark'] & {
       background-color: rgba($lbry-gray-1, 0.1);
@@ -62,7 +63,7 @@ input {
 }
 
 textarea {
-  font-size: 0.8rem;
+  // font-size: 0.8rem;
 }
 
 
@@ -142,6 +143,10 @@ textarea {
 .alert-text {
   color: $lbry-red-3;
   font-weight: 600;
+
+  html[data-theme='dark'] & {
+    color: $lbry-red-1;
+  }
 }
 
 .help {

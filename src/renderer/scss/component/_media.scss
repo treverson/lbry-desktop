@@ -147,6 +147,10 @@
   &--file-page {
     border-top: 1px solid $lbry-gray-1;
     padding-top: 1rem;
+
+    html[data-theme='dark'] & {
+      border-color: rgba($lbry-gray-5, 0.2);
+    }
   }
 
   html[data-theme='dark'] & {
@@ -468,8 +472,6 @@
 
 .media-group--list {
   .card__list {
-    // display: grid;
-    // grid-gap: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
 

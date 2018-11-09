@@ -2,11 +2,6 @@
   fill: currentColor;
   position: relative;
 
-  &:not(&--primary) {
-    background-color: transparent;
-    color: inherit;
-  }
-
   &--alt {
   }
 
@@ -26,10 +21,18 @@
 
     &:not(:hover) {
       color: $lbry-teal-5;
+
+      html[data-theme='dark'] & {
+        color: $lbry-teal-3;
+      }
     }
 
     &:hover {
       color: $lbry-teal-3;
+
+      html[data-theme='dark'] & {
+        color: $lbry-teal-4;
+      }
     }
   }
 
@@ -71,6 +74,42 @@
   }
 
   &--inverse {
+    border: 1px solid $lbry-gray-1;
+    border-radius: 1rem;
+    color: inherit;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s;
+
+    html[data-theme='dark'] & {
+      border-color: rgba($lbry-white, 0.1);
+    }
+
+    &:not(:hover) {
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: $lbry-gray-1;
+
+      html[data-theme='dark'] & {
+        background-color: rgba($lbry-white, 0.1);
+      }
+    }
+
+    .btn__content {
+      display: flex;
+
+      svg {
+        width: 1rem; height: 1rem;
+
+        color: $lbry-gray-4;
+        margin-right: 0.25rem;
+      }
+
+      .btn__label {
+        line-height: 1rem;
+      }
+    }
   }
 
   &--no-style {
@@ -88,6 +127,10 @@
 
     &:hover {
       background-color: $lbry-teal-3;
+
+      html[data-theme='dark'] & {
+        background-color: $lbry-teal-4;
+      }
     }
 
     svg {
